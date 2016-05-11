@@ -1,0 +1,4 @@
+{{^if noUi}}
+	<can-import from="./auth.less"/>
+{{/if}}
+<content></content>
