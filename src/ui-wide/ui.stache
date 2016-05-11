@@ -1,0 +1,17 @@
+<div id="auth-ui-container">
+	<div class="auth-branding">
+		<content></content>
+	</div>
+	<ul class="local-auth-switch">
+		<li class="login active"><a href="/login">Login</a></li>
+		<li class="signup"><a href="/signup">Signup</a></li>
+	</ul>
+	<form id="local-login">
+		<input type="email" placeholder="e-mail address">
+		<input type="password" placeholder="password">
+		<div class="forgot-password">
+			<a href="/forgot">forgot password</a>
+		</div>
+		<button>Login</button>
+	</form>
+</div>

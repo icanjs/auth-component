@@ -6,6 +6,11 @@ import template from './auth.stache';
 
 export const ViewModel = Map.extend({
   define: {
+
+      ui: {
+        value: 'compact'
+      },
+
       /**
        * The `session` is bound out to the appstate's `session`, so we can update
        * the appstate's session once the user has logged in.
@@ -53,5 +58,6 @@ export const ViewModel = Map.extend({
 export default Component.extend({
   tag: 'auth-component',
   viewModel: ViewModel,
-  template
+  template,
+  leakScope: true
 });

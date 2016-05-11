@@ -1,17 +1,35 @@
 <div id="auth-ui-container">
+	<ul class="local-auth-tabs">
+		<li class="signup {{#routeCurrent page='auth' subpage='signup'}}active{{/routeCurrent}}">
+			<a href="/signup">Signup</a>
+		</li>
+		<li class="login {{#routeCurrent page='auth' subpage='login'}}active{{/routeCurrent}}">
+			<a href="/login">Login</a>
+		</li>
+	</ul>
+
 	<div class="auth-branding">
 		<content></content>
 	</div>
-	<ul class="local-auth-switch">
-		<li class="login active"><a href="/login">Login</a></li>
-		<li class="signup"><a href="/signup">Signup</a></li>
-	</ul>
-	<form id="local-login">
-		<input type="email" placeholder="e-mail address">
-		<input type="password" placeholder="password">
-		<div class="forgot-password">
-			<a href="/forgot">forgot password</a>
-		</div>
-		<button>Login</button>
-	</form>
+
+	<div class="social-logins"></div>
+
+		<form id="local-auth">
+			<div class="messages"></div>
+
+			<input type="email" placeholder="e-mail address">
+			<input type="password" placeholder="password">
+			
+			{{#is subpage 'login'}}
+				<div class="forgot-password">
+					<a href="/forgot">forgot password</a>
+				</div>
+			<button>Login</button>
+			{{/is}}
+
+			{{#is subpage 'signup'}}
+				<button>Signup</button>
+			{{/is}}
+		</form>
+
 </div>

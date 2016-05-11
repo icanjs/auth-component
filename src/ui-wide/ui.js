@@ -7,13 +7,13 @@ import template from './ui.stache!';
 export const ViewModel = Map.extend({
   define: {
     message: {
-      value: 'This is the auth-ui component'
+      value: 'This is the auth-ui-wide component'
     }
   }
 });
 
 export default Component.extend({
-  tag: 'auth-ui',
+  tag: 'auth-ui-wide',
   viewModel: ViewModel,
   template
 });

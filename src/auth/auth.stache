@@ -1,4 +1,16 @@
-{{^if noUi}}
-	<can-import from="./auth.less"/>
-{{/if}}
-<content></content>
+{{#switch ui}}
+	{{#case 'compact'}}
+		<can-import from="./auth.less"/>
+		<auth-ui>
+			<content></content>
+		</auth-ui>
+	{{/case}}
+
+	{{#case 'wide'}}
+		<can-import from="./auth.less"/>
+	{{/case}}
+
+	{{#case 'none'}}
+		<can-import from="./auth.less"/>
+	{{/case}}
+{{/switch}}

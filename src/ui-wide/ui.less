@@ -1,6 +1,6 @@
 @import 'locate://auth-component/breakpoints.less';
 
-auth-ui {
+auth-ui-wide {
 	height: 100%;
 	width: 100%;
 	display: -webkit-flex;
@@ -37,26 +37,35 @@ auth-ui {
 		text-align: center;
 	}
 
-	ul.local-auth-tabs {
+	ul.local-auth-switch {
 		list-style: none;
 		padding: 0;
 		margin: 0 auto;
 		display: flex;
-		font-size: 16px;
+		border: solid 1px #E8E8E8;
+		width: 215px;
+		font-size: 13px;
 		font-weight: 400;
 
 		li {
-			height: 56px;
-			line-height: 56px;
+			height: 40px;
+			line-height: 40px;
 			width: 50%;
 			text-align: center;
+
+			&.active {
+				background: #FAFAFA;
+
+				&.login {
+					border-right: solid 1px #E8E8E8;
+				}
+				&.signup {
+					border-left: solid 1px #E8E8E8;
+				}
+			}
 			&:not(.active){
-				background: #77BFED;
 				a {
-					color: white;
-					display:block;
-					height: 100%;
-					width: 100%;
+					color: #77BFED;
 				}
 			}
 		}
@@ -64,6 +73,7 @@ auth-ui {
 
 	form {
 		text-align: center;
+		padding: 20px 0 0;
 		font-size: 16px;
 
 		input[type=email], input[type=text], input[type=password] {
