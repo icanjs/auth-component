@@ -48,12 +48,25 @@ auth-ui {
 		list-style: none;
 		margin: 0;
 		padding: 0;
+		position: relative;
+		top: -16px;
 		display: -webkit-flex;
 		display: flex;
 		-webkit-justify-content: center;
 		justify-content: center;
 		-webkit-flex-wrap: wrap;
 		flex-wrap: wrap;
+
+		&.one {
+			li {
+				width: 168px;
+			}
+		}
+		&.two {
+			li {
+				width: 134px;
+			}
+		}
 
 		li {
 			border: 0px solid #556D99;
@@ -67,55 +80,127 @@ auth-ui {
 			-webkit-justify-content: center;
 			justify-content: center;
 			margin: 7px;
+			color: white;
+			font-size: 12px;
 
+			&.one, &.two {
+				a {
+					justify-content: flex-start;
+				}
+			}
+			a {
+				width: 100%;
+				height: 100%;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+			span {
+				color: white;
+				padding-left: 2px;
+			}
 			svg {
 				height: 23px;
-				margin-top: 2px;
+				margin: 0 7px;
 			}
+
 			&.sso-amazon {
 				background: #FFAD1D;
+				color: black;
+				&.one {
+					width: 154px;
+				}
+				span {
+					color: black;
+					font-weight: 400;
+				}
 			}
 			&.sso-dropbox {
 				background: #007EE5;
+				&.one {
+					width: 154px;
+				}
 			}
 			&.sso-evernote {
 				background: #68B629;
+				&.one {
+					width: 149px;
+				}
 			}
 			&.sso-facebook {
 				background: #5E7AB5;
+				&.one {
+					width: 159px;
+				}
 			}
 			&.sso-github {
 				background: #a6a0a0;
+				&.one {
+					width: 144px;
+				}
 			}
 			&.sso-google {
 				background: #DD4B39;
+				&.one {
+					width: 145px;
+				}
 			}
 			&.sso-linkedin {
 				background: #006087;
+				&.one {
+					width: 148px;
+				}
 			}
 			&.sso-microsoft {
 				background: #2672EC;
+				&.one {
+					width: 153px;
+				}
 			}
 			&.sso-openid {
 				background: #F27F1C;
+				&.one {
+					width: 148px;
+				}
 			}
 			&.sso-paypal {
 				background: #005082;
+				&.one {
+					width: 141px;
+				}
 			}
 			&.sso-skype {
 				background: #1AAEF0;
+				&.one {
+					width: 140px;
+				}
 			}
-			&.sso-twitter {
-				background: #50ABF1;
-			}
-			&.sso-yahoo {
-				background: #7B0099;
+			&.sso-slack {
+				background: #50AD83;
+				&.one {
+					width: 135px;
+				}
 			}
 			&.sso-stack-overflow {
 				background: #E5712A;
+				&.one {
+					width: 179px;
+				}
 			}
-			&.sso-slack {
-				background: #56B68B;
+			&.sso-twitter {
+				background: #50ABF1;
+				&.one {
+					width: 147px;
+				}
+				svg {
+					height: 20px;
+				}
+			}
+			&.sso-yahoo {
+				background: #7B0099;
+				&.one {
+					width: 142px;
+				}
 			}
 		}
 	}
