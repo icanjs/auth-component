@@ -1,24 +1,8 @@
 @import 'locate://auth-component/breakpoints.less';
 
 auth-ui {
-	height: 100%;
-	width: 100%;
-	display: -webkit-flex;
-	display: flex;
-	-webkit-flex-direction: row;
-	flex-direction: row;
-	-webkit-align-items: center;
-	align-items: center;
-	-webkit-justify-content: center;
-	justify-content: center;
+	display: block;
 	color: #4A4A4A;
-
-	.bp-mobile-medium({
-		width: 270px;
-		padding: 0 20px;
-		margin-top: 26px;
-		height: inherit;
-	});
 
 	a {
 		text-decoration: none;
@@ -28,8 +12,6 @@ auth-ui {
 	div#auth-ui-container {
 		padding-bottom: 11px;
 		background: white;
-		width: 100%;
-		height: 100%;
 	}
 
 	.auth-branding {
@@ -62,6 +44,82 @@ auth-ui {
 		}
 	}
 
+	ul.sso-providers {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		display: -webkit-flex;
+		display: flex;
+		-webkit-justify-content: center;
+		justify-content: center;
+		-webkit-flex-wrap: wrap;
+		flex-wrap: wrap;
+
+		li {
+			border: 0px solid #556D99;
+			border-radius: 2px;
+			width: 39px;
+			height: 38px;
+			display: -webkit-flex;
+			display: flex;
+			-webkit-align-items: center;
+			align-items: center;
+			-webkit-justify-content: center;
+			justify-content: center;
+			margin: 7px;
+
+			svg {
+				height: 23px;
+				margin-top: 2px;
+			}
+			&.sso-amazon {
+				background: #FFAD1D;
+			}
+			&.sso-dropbox {
+				background: #007EE5;
+			}
+			&.sso-evernote {
+				background: #68B629;
+			}
+			&.sso-facebook {
+				background: #5E7AB5;
+			}
+			&.sso-github {
+				background: #a6a0a0;
+			}
+			&.sso-google {
+				background: #DD4B39;
+			}
+			&.sso-linkedin {
+				background: #006087;
+			}
+			&.sso-microsoft {
+				background: #2672EC;
+			}
+			&.sso-openid {
+				background: #F27F1C;
+			}
+			&.sso-paypal {
+				background: #005082;
+			}
+			&.sso-skype {
+				background: #1AAEF0;
+			}
+			&.sso-twitter {
+				background: #50ABF1;
+			}
+			&.sso-yahoo {
+				background: #7B0099;
+			}
+			&.sso-stack-overflow {
+				background: #E5712A;
+			}
+			&.sso-slack {
+				background: #56B68B;
+			}
+		}
+	}
+
 	form {
 		text-align: center;
 		font-size: 16px;
@@ -84,6 +142,7 @@ auth-ui {
 
 		div.forgot-password {
 			margin-top: 12px;
+			height: 15px;
 			font-size: 12px;
 			a {
 				color: #77BFED;
