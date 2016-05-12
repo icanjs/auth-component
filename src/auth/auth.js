@@ -11,6 +11,37 @@ export const ViewModel = Map.extend({
         value: 'compact'
       },
 
+      local: {
+        set(val){
+          val = val || 'password';
+          console.log(val);
+          return val;
+        }
+      },
+
+      tabsShouldShow: {
+        get(){
+          console.log('hi');
+          return this.attr('local') === 'password' && this.attr('localSignup');
+        }
+      },
+
+      /**
+       * Determines if signup controls are visible in the UI. Valid values include
+       * `none` and `false`.
+       */
+      localSignup: {
+        value: true,
+        set(val){
+          if (val === 'none' || val === 'false') {
+            val = false;
+          } else {
+            val = true;
+          }
+          return val;
+        }
+      },
+
       /**
        * The `session` is bound out to the appstate's `session`, so we can update
        * the appstate's session once the user has logged in.

@@ -1,12 +1,15 @@
 <div id="auth-ui-container">
-	<ul class="local-auth-tabs">
-		<li class="signup {{#routeCurrent page='auth' subpage='signup'}}active{{/routeCurrent}}">
-			<a href="/signup">Signup</a>
-		</li>
-		<li class="login {{#routeCurrent page='auth' subpage='login'}}active{{/routeCurrent}}">
-			<a href="/login">Login</a>
-		</li>
-	</ul>
+
+	{{#if tabsShouldShow}}
+		<ul class="local-auth-tabs">
+			<li class="signup {{#routeCurrent page='auth' subpage='signup'}}active{{/routeCurrent}}">
+				<a href="/signup">Signup</a>
+			</li>
+			<li class="login {{#routeCurrent page='auth' subpage='login'}}active{{/routeCurrent}}">
+				<a href="/login">Login</a>
+			</li>
+		</ul>
+	{{/if}}
 
 	<div class="auth-branding">
 		<content></content>
