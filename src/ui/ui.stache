@@ -34,11 +34,11 @@
 		</div>
 
 		{{#is subpage 'login'}}
-			<button>Login</button>
+			<button type="submit">Login</button>
 		{{/is}}
 
 		{{#is subpage 'signup'}}
-			<button>Signup</button>
+			<button type="submit">Signup</button>
 		{{/is}}
 	</form>
 
