@@ -1,4 +1,4 @@
-<li class="sso-facebook {{providerCountClass}}">
+<li class="sso-facebook {{providerCountClass}}" title="Login with Facebook">
 	<a href="/auth/facebook">
 		<svg viewBox="0 0 30 30" version="1.1">
 			<title>facebook</title>

@@ -1,4 +1,4 @@
-<li class="sso-dropbox {{providerCountClass}}">
+<li class="sso-dropbox {{providerCountClass}}" title="Login with Dropbox">
 	<a href="/auth/dropbox">
 		<svg viewBox="0 0 30 28" version="1.1">
 			<title>dropbox</title>

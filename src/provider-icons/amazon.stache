@@ -1,4 +1,4 @@
-<li class="sso-amazon {{providerCountClass}}">
+<li class="sso-amazon {{providerCountClass}}" title="Login with Amazon">
 	<a href="/auth/amazon">
 		<svg viewBox="0 0 28 26">
 			<title>amazon</title>

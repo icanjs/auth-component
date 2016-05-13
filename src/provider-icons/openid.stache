@@ -1,4 +1,4 @@
-<li class="sso-openid {{providerCountClass}}">
+<li class="sso-openid {{providerCountClass}}" title="Login with OpenID">
 	<a href="/auth/openid">
 		<svg viewBox="0 0 28 26" version="1.1">
 			<title>openid</title>

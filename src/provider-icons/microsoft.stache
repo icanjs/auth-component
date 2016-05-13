@@ -1,4 +1,4 @@
-<li class="sso-microsoft {{providerCountClass}}">
+<li class="sso-microsoft {{providerCountClass}}" title="Login with Microsoft">
 	<a href="/auth/microsoft">
 		<svg viewBox="0 0 27 27" version="1.1">
 			<title>microsoft</title>

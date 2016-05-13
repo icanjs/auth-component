@@ -1,4 +1,4 @@
-<li class="sso-paypal {{providerCountClass}}">
+<li class="sso-paypal {{providerCountClass}}" title="Login with PayPal">
 	<a href="/auth/paypal">
 		<svg viewBox="0 0 25 28" version="1.1">
 			<title>paypal</title>
