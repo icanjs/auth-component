@@ -2,10 +2,10 @@
 
 	{{#if tabsShouldShow}}
 		<ul class="local-auth-tabs">
-			<li class="signup {{#routeCurrent page='auth' subpage='signup'}}active{{/routeCurrent}}">
+			<li class="signup {{#is subpage 'signup'}}active{{/is}}">
 				<a href="/signup">Signup</a>
 			</li>
-			<li class="login {{#routeCurrent page='auth' subpage='login'}}active{{/routeCurrent}}">
+			<li class="login {{#is subpage 'login'}}active{{/is}}">
 				<a href="/login">Login</a>
 			</li>
 		</ul>
@@ -34,7 +34,7 @@
 		</div>
 
 		{{#is subpage 'login'}}
-		<button>Login</button>
+			<button>Login</button>
 		{{/is}}
 
 		{{#is subpage 'signup'}}
