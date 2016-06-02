@@ -4,6 +4,8 @@
 
 Simple authentication utilities for DoneJS
 
+Find docs for the old version here: https://github.com/marshallswain/auth-component
+
 ## Usage
 
 ### ES6 use
