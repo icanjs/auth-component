@@ -15,7 +15,6 @@ export const ViewModel = Map.extend({
       local: {
         set(val){
           val = val || 'password';
-          console.log(val);
           return val;
         }
       },
@@ -25,7 +24,6 @@ export const ViewModel = Map.extend({
        */
       tabsShouldShow: {
         get(){
-          console.log('hi');
           return this.attr('local') === 'password' && this.attr('localSignup');
         }
       },

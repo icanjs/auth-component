@@ -21,25 +21,27 @@
 		{{/each}}
 	</ul>
 
-	<form id="local-auth">
-		<div class="messages"></div>
+	{{^is local 'false'}}
+		<form id="local-auth">
+			<div class="messages"></div>
 
-		<input type="email" placeholder="e-mail address">
-		<input type="password" placeholder="password">
+			<input type="email" placeholder="e-mail address">
+			<input type="password" placeholder="password">
 
-		<div class="forgot-password">
+			<div class="forgot-password">
+				{{#is subpage 'login'}}
+					<a href="/forgot">forgot password</a>
+				{{/is}}
+			</div>
+
 			{{#is subpage 'login'}}
-				<a href="/forgot">forgot password</a>
+				<button type="submit">Login</button>
 			{{/is}}
-		</div>
 
-		{{#is subpage 'login'}}
-			<button type="submit">Login</button>
-		{{/is}}
-
-		{{#is subpage 'signup'}}
-			<button type="submit">Signup</button>
-		{{/is}}
-	</form>
+			{{#is subpage 'signup'}}
+				<button type="submit">Signup</button>
+			{{/is}}
+		</form>
+	{{/is}}
 
 </div>
