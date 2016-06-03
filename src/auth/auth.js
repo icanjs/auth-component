@@ -1,5 +1,6 @@
 import Component from 'can/component/';
 import Map from 'can/map/';
+import can from 'can';
 import 'can/map/define/';
 import './auth.less!';
 import template from './auth.stache';
@@ -131,11 +132,14 @@ export const ViewModel = Map.extend({
 
       sessionModel: {},
 
-      /**
-       * The `page` is bound out to the appstate's `page`, so we can change to
-       * the `chat` page once the user has logged in.
-       */
       page: {},
+
+      subpage: {
+        get(){
+          let subpage = can.route.attr('subpage');
+          return this.attr('local') === 'false' ? 'login' : subpage;
+        }
+      },
 
       email: {
         type: 'string'
