@@ -132,12 +132,21 @@ export const ViewModel = Map.extend({
 
       sessionModel: {},
 
-      page: {},
+      /**
+       * Set the `routeAttrName` to the attribute in the route that the component
+       * should watch to determine which tab to show and to handle OAuth login failure.
+       */
+      routeAttrName: {
+        value: 'subpage'
+      },
 
-      subpage: {
+      /**
+       * `routeAttr` returns the value held in the `routeAttrName` of can.route.
+       */
+      routeAttr: {
         get(){
-          let subpage = can.route.attr('subpage');
-          return this.attr('local') === 'false' ? 'login' : subpage;
+          let attrName = this.attr('routeAttrName');
+          return can.route.attr(attrName);
         }
       },
 
@@ -158,16 +167,11 @@ export const ViewModel = Map.extend({
         console.error('A session model must be provided to the auth-component.');
       }
 
-      new Session({
+      return new Session({
         type: 'local',
         email,
         password
       }).save();
-      // .then(response => {
-      //   this.attr('session', response);
-      //   this.attr('page', 'chat');
-      //   return response;
-      // });
     }
 });
 

@@ -29,16 +29,16 @@
 			<input type="password" placeholder="password">
 
 			<div class="forgot-password">
-				{{#is subpage 'login'}}
+				{{#is routeAttr 'login'}}
 					<a href="/forgot">forgot password</a>
 				{{/is}}
 			</div>
 
-			{{#is subpage 'login'}}
+			{{#is routeAttr 'login'}}
 				<button type="submit">Login</button>
 			{{/is}}
 
-			{{#is subpage 'signup'}}
+			{{#is routeAttr 'signup'}}
 				<button type="submit">Signup</button>
 			{{/is}}
 		</form>
