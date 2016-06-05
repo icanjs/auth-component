@@ -15,6 +15,12 @@
 		<content></content>
 	</div>
 
+	{{#is local 'false'}}
+		{{#is routeAttr 'failure'}}
+			<div class="auth-error">Login failed.</div>
+		{{/is}}
+	{{/is}}
+
 	<ul class="sso-providers {{providerCountClass}}">
 		{{#each providerList}}
 			{{> template}}
@@ -22,6 +28,10 @@
 	</ul>
 
 	{{^is local 'false'}}
+		{{#is routeAttr 'failure'}}
+			<div class="auth-error">Login failed.</div>
+		{{/is}}
+
 		<form id="local-auth">
 			<div class="messages"></div>
 
