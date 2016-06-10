@@ -1,5 +1,5 @@
 <li class="sso-dropbox {{providerCountClass}}" title="Login with Dropbox">
-	<a href="/auth/dropbox">
+	<a href="{{baseUrl}}/auth/dropbox">
 		<svg viewBox="0 0 30 28" version="1.1">
 			<title>dropbox</title>
 			<g id="Dropbox" transform="translate(-31.000000, -12.000000)" fill="#FFFFFF">

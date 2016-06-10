@@ -1,5 +1,5 @@
 <li class="sso-evernote {{providerCountClass}}" title="Login with Evernote">
-	<a href="/auth/evernote">
+	<a href="{{baseUrl}}/auth/evernote">
 		<svg viewBox="0 0 25 29" version="1.1">
 		  <title>evernote</title>
 		  <g id="Evernote" transform="translate(-34.000000, -12.000000)" fill="#FFFFFF">

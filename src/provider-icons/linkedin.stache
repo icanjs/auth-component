@@ -1,5 +1,5 @@
 <li class="sso-linkedin {{providerCountClass}}" title="Login with Linkedin">
-	<a href="/auth/linkedin">
+	<a href="{{baseUrl}}/auth/linkedin">
 		<svg viewBox="0 0 27 27" version="1.1">
 			<title>linkedin</title>
 			<g id="Linkedin" transform="translate(-33.000000, -13.000000)" fill="#FFFFFF">

@@ -1,7 +1,7 @@
 {{#switch ui}}
 	{{#case 'compact'}}
 		<can-import from="./auth.less"/>
-		<auth-ui>
+		<auth-ui {base-url}="baseUrl">
 			<content></content>
 		</auth-ui>
 	{{/case}}

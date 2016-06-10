@@ -1,5 +1,5 @@
 <li class="sso-github {{providerCountClass}}" title="Login with GitHub">
-	<a href="/auth/github">
+	<a href="{{baseUrl}}/auth/github">
 		<svg viewBox="0 0 30 30" version="1.1">
 			<title>github</title>
 			<g id="GitHub" transform="translate(-31.000000, -11.000000)" fill="#FFFFFF">

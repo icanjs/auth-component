@@ -6,8 +6,9 @@ import template from './ui.stache!';
 
 export const ViewModel = Map.extend({
   define: {
-    message: {
-      value: 'This is the auth-ui component'
+    // The baseUrl of the OAuth server to which you're authenticating.
+    baseUrl: {
+      value: ''
     }
   }
 });
