@@ -15,5 +15,6 @@ export const ViewModel = DefineMap.extend({
 export default Component.extend({
   tag: 'auth-ui',
   ViewModel: ViewModel,
-  template
+  template,
+	leakScope: true
 });
