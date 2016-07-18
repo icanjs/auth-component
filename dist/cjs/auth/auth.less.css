@@ -1,0 +1,35 @@
+/*auth-component@3.0.3#auth/auth.less!$less*/
+/*
+MEDIUM MOBILE DEVICES
+~375px+
+*/
+/*
+LARGE MOBILE DEVICES
+~425px+
+*/
+/*
+TABLET & SMALLER LAPTOPS
+~768px+
+*/
+/*
+DESKTOP
+~1030px+
+*/
+/*
+LARGE VIEWING SIZE
+~1240px+
+*/
+auth-component {
+  display: block;
+  height: 100%;
+  width: 100%;
+  margin: 0 auto;
+}
+@media only screen and (min-width: 375px) {
+  auth-component {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
