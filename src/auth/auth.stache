@@ -1,4 +1,4 @@
-<can-import from="./auth/auth.less"/>
+<can-import from="auth-component/auth/auth.less"/>
 
 {{#switch ui}}
 	{{#case 'compact'}}
