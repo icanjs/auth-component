@@ -1,6 +1,6 @@
 {
   "name": "auth-component",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "Simple authentication utilities for DoneJS",
   "homepage": "https://github.com/icanjs/auth-component",
   "repository": {
