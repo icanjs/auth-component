@@ -62,11 +62,11 @@
     "npmAlgorithm": "flat"
   },
   "dependencies": {
-    "can-component": "^3.0.0-pre.8",
-    "can-define": "^0.7.4",
+    "can-component": "^3.0.0-pre.14",
+    "can-define": "^0.7.7",
     "can-route": "^3.0.0-pre.9",
-    "can-stache": "^3.0.0-pre.6",
-    "steal-stache": "^3.0.0-pre.2"
+    "can-stache": "^3.0.0-pre.11",
+    "steal-stache": "^3.0.0-pre.3"
   },
   "devDependencies": {
     "documentjs": "^0.4.2",

@@ -13,6 +13,6 @@ export const ViewModel = DefineMap.extend({
 
 export default Component.extend({
   tag: 'auth-ui-wide',
-  viewModel: ViewModel,
+  ViewModel: ViewModel,
   template
 });

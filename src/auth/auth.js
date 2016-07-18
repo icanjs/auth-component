@@ -169,7 +169,7 @@ export const ViewModel = DefineMap.extend({
 
 export default Component.extend({
   tag: 'auth-component',
-  viewModel: ViewModel,
+  ViewModel,
   template,
   leakScope: true
 });
