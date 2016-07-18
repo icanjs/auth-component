@@ -1,16 +1,17 @@
+<can-import from="./auth/auth.less"/>
+
 {{#switch ui}}
 	{{#case 'compact'}}
-		<can-import from="./auth.less"/>
 		<auth-ui {base-url}="baseUrl">
 			<content></content>
 		</auth-ui>
 	{{/case}}
 
 	{{#case 'wide'}}
-		<can-import from="./auth.less"/>
+		<!-- <can-import from="./auth.less"/> -->
 	{{/case}}
 
 	{{#case 'none'}}
-		<can-import from="./auth.less"/>
+		<!-- <can-import from="./auth.less"/> -->
 	{{/case}}
 {{/switch}}

@@ -1,6 +1,6 @@
 {
   "name": "auth-component",
-  "version": "1.1.0",
+  "version": "3.0.0",
   "description": "Simple authentication utilities for DoneJS",
   "homepage": "https://github.com/icanjs/auth-component",
   "repository": {
@@ -62,8 +62,11 @@
     "npmAlgorithm": "flat"
   },
   "dependencies": {
-    "can": "^2.3.16",
-    "jquery": "~2.2.1"
+    "can-component": "^3.0.0-pre.8",
+    "can-define": "^0.7.4",
+    "can-route": "^3.0.0-pre.9",
+    "can-stache": "^3.0.0-pre.6",
+    "steal-stache": "^3.0.0-pre.2"
   },
   "devDependencies": {
     "documentjs": "^0.4.2",
