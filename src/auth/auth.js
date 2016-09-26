@@ -122,7 +122,9 @@ export const ViewModel = DefineMap.extend({
    * The `session` is bound out to the appstate's `session`, so we can update
    * the appstate's session once the user has logged in.
    */
-  session: {},
+  session: {
+    type: '*'
+  },
 
   sessionModel: {},
 
