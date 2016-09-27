@@ -63,21 +63,24 @@
   },
   "dependencies": {
     "can-component": "^3.0.0-pre.14",
-    "can-define": "^0.7.7",
+    "can-define": "^0.8.2",
     "can-route": "^3.0.0-pre.9",
-    "can-stache": "^3.0.0-pre.11",
+    "can-stache": "^3.0.0-pre.21",
+    "can-stache-bindings": "^3.0.0-pre.23",
     "steal-stache": "^3.0.0-pre.3"
   },
   "devDependencies": {
-    "documentjs": "^0.4.2",
-    "jshint": "^2.9.1",
+    "can-route": "^3.0.0-pre.18",
+    "can-view-autorender": "^3.0.0-pre.4",
     "cssify": "^0.6.0",
-    "steal": "^0.16.0",
+    "documentjs": "^0.4.2",
+    "done-serve": "^0.2.0",
+    "donejs-cli": "^0.9.4",
+    "generator-donejs": "^0.9.0",
+    "jshint": "^2.9.1",
+    "steal": "^0.16.37",
     "steal-qunit": "^0.1.1",
     "steal-tools": "^0.16.0",
-    "testee": "^0.2.4",
-    "generator-donejs": "^0.9.0",
-    "donejs-cli": "^0.9.4",
-    "done-serve": "^0.2.0"
+    "testee": "^0.2.4"
   }
 }
