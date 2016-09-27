@@ -22,7 +22,7 @@ export const ViewModel = DefineMap.extend({
    */
   tabsShouldShow: {
     get(){
-      return this.local === 'password' && this.localSignup;
+      return this.localSignup;
     }
   },
 
@@ -103,8 +103,8 @@ export const ViewModel = DefineMap.extend({
   },
 
   /**
-   * Determines if signup controls are visible in the UI. Valid values include
-   * `none` and `false`.
+   * Determines if signup controls are visible in the UI. Any values other than
+   * `none` and `false` will be interpreted as `true`.
    */
   localSignup: {
     value: false,
@@ -129,20 +129,11 @@ export const ViewModel = DefineMap.extend({
   sessionModel: {},
 
   /**
-   * Set the `routeAttrName` to the attribute in the route that the component
-   * should watch to determine which tab to show and to handle OAuth login failure.
+   * The name of the currently active tab. Bind this to an attribute in your routes
+   * to make it update the route.
    */
-  routeAttrName: {
-    value: 'subpage'
-  },
-
-  /**
-   * `routeAttr` returns the value held in the `routeAttrName` of can.route.
-   */
-  routeAttr: {
-    get(){
-      return route[this.routeAttrName];
-    }
+  activeTab: {
+    value: 'login'
   },
 
   email: {

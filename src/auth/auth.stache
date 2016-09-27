@@ -2,16 +2,17 @@
 
 {{#switch ui}}
 	{{#case 'compact'}}
-		<auth-ui {base-url}="baseUrl">
+		<auth-ui {base-url}="baseUrl"
+			{(active-tab)}="activeTab">
 			<content></content>
 		</auth-ui>
 	{{/case}}
 
 	{{#case 'wide'}}
-		<!-- <can-import from="./auth.less"/> -->
+		<!-- Wide mode not yet implemented. -->
 	{{/case}}
 
 	{{#case 'none'}}
-		<!-- <can-import from="./auth.less"/> -->
+		<!--  -->
 	{{/case}}
 {{/switch}}

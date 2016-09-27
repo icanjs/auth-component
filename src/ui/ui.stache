@@ -2,11 +2,11 @@
 
 	{{#if tabsShouldShow}}
 		<ul class="local-auth-tabs">
-			<li class="signup {{#is subpage 'signup'}}active{{/is}}">
-				<a href="/signup">Signup</a>
+			<li class="signup {{#is activeTab 'signup'}}active{{/is}}" ($click)="setActiveTab('signup')">
+				<a href="javascript://">Signup</a>
 			</li>
-			<li class="login {{#is subpage 'login'}}active{{/is}}">
-				<a href="/login">Login</a>
+			<li class="login {{#is activeTab 'login'}}active{{/is}}" ($click)="setActiveTab('login')">
+				<a href="javascript://">Login</a>
 			</li>
 		</ul>
 	{{/if}}
@@ -39,16 +39,16 @@
 			<input type="password" placeholder="password">
 
 			<div class="forgot-password">
-				{{#is routeAttr 'login'}}
+				{{#is activeTab 'login'}}
 					<a href="/forgot">forgot password</a>
 				{{/is}}
 			</div>
 
-			{{#is routeAttr 'login'}}
+			{{#is activeTab 'login'}}
 				<button type="submit">Login</button>
 			{{/is}}
 
-			{{#is routeAttr 'signup'}}
+			{{#is activeTab 'signup'}}
 				<button type="submit">Signup</button>
 			{{/is}}
 		</form>
