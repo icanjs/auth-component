@@ -4,14 +4,15 @@ import './ui.less!';
 import template from './ui.stache!';
 
 export const ViewModel = DefineMap.extend({
+  email: 'string',
+  password: 'string',
+
   // The baseUrl of the OAuth server to which you're authenticating.
   baseUrl: {
     value: ''
   },
 
-  activeTab: {
-    type: 'string'
-  },
+  activeTab: 'string',
 
   setActiveTab(tabName) {
     this.activeTab = tabName;

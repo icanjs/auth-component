@@ -1,5 +1,6 @@
 <div id="auth-ui-container">
 
+	{{!-- Signup / Login tabs can show for username / password auth --}}
 	{{#if tabsShouldShow}}
 		<ul class="local-auth-tabs">
 			<li class="signup {{#is activeTab 'signup'}}active{{/is}}" ($click)="setActiveTab('signup')">
@@ -21,39 +22,60 @@
 		{{/is}}
 	{{/is}}
 
+	{{!-- OAuth Login Buttons--}}
 	<ul class="sso-providers {{providerCountClass}}">
 		{{#each providerList}}
 			{{> template}}
 		{{/each}}
 	</ul>
 
+	{{!-- If username/password login is enabled --}}
 	{{#is local 'password'}}
 		{{#is routeAttr 'failure'}}
 			<div class="auth-error">Login failed.</div>
 		{{/is}}
 
-		<form id="local-auth">
-			<div class="messages"></div>
+		{{#is activeTab 'login'}}
+			<form id="local-auth" ($submit)="login(%event, email, password)">
+				<div class="messages"></div>
+{{log}}
+				<input type="email" placeholder="e-mail address" {($value)}="email">
+				<input type="password" placeholder="password" {($value)}="password">
 
-			<input type="email" placeholder="e-mail address">
-			<input type="password" placeholder="password">
-
-			<div class="forgot-password">
-				{{#is activeTab 'login'}}
-					<a href="/forgot">forgot password</a>
-				{{/is}}
-			</div>
-
-			{{#is activeTab 'login'}}
+				<div class="forgot-password">
+					{{#is activeTab 'login'}}
+						<a href="/forgot">forgot password</a>
+					{{/is}}
+				</div>
 				<button type="submit">Login</button>
-			{{/is}}
+			</form>
+		{{/is}}
 
-			{{#is activeTab 'signup'}}
-				<button type="submit">Signup</button>
-			{{/is}}
-		</form>
+		{{#is activeTab 'signup'}}
+			<form id="local-auth" ($submit)="signup">
+				<div class="messages"></div>
+
+				<input type="email" placeholder="e-mail address">
+				<input type="password" placeholder="password">
+
+				<div class="forgot-password">
+					{{#is activeTab 'login'}}
+						<a href="/forgot">forgot password</a>
+					{{/is}}
+				</div>
+
+				{{#is activeTab 'login'}}
+					<button type="submit">Login</button>
+				{{/is}}
+
+				{{#is activeTab 'signup'}}
+					<button type="submit">Signup</button>
+				{{/is}}
+			</form>
+		{{/is}}
 	{{/is}}
 
+	{{!-- Stub for enabling passwordless authentication. --}}
 	{{#is local 'passwordless'}}
 		<form id="local-auth">
 			<div class="messages"></div>
