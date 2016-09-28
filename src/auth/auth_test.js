@@ -15,8 +15,7 @@ QUnit.test('Default Values', function(){
   QUnit.equal(vm.providerCount, 0, 'Default providerCount is 0.');
   QUnit.equal(vm.providerCountClass, undefined, 'No provider count class by default');
   QUnit.equal(vm.localSignup, false, 'Signup disabled by default');
-  QUnit.equal(vm.routeAttrName, 'subpage', 'Default route attribute is "subpage".');
-  QUnit.equal(vm.routeAttr, undefined, 'Default route attribute is "subpage".');
+  QUnit.equal(vm.activeTab, 'login', 'Default activeTab attribute is "login".');
   QUnit.equal(vm.email, undefined, 'No default email.');
   QUnit.equal(vm.password, undefined, 'No default password.');
   QUnit.equal(typeof vm.login, 'function', 'Login function is in place.');
