@@ -64,13 +64,11 @@
   "dependencies": {
     "can-component": "^3.0.0-pre.16",
     "can-define": "^0.8.2",
-    "can-route": "^3.0.0-pre.9",
     "can-stache": "^3.0.0-pre.21",
     "can-stache-bindings": "^3.0.0-pre.23",
     "steal-stache": "^3.0.0-pre.3"
   },
   "devDependencies": {
-    "can-route": "^3.0.0-pre.18",
     "can-view-autorender": "^3.0.0-pre.4",
     "cssify": "^0.6.0",
     "documentjs": "^0.4.2",
