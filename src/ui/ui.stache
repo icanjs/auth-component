@@ -27,7 +27,7 @@
 		{{/each}}
 	</ul>
 
-	{{^is local 'false'}}
+	{{#is local 'password'}}
 		{{#is routeAttr 'failure'}}
 			<div class="auth-error">Login failed.</div>
 		{{/is}}
@@ -51,6 +51,14 @@
 			{{#is activeTab 'signup'}}
 				<button type="submit">Signup</button>
 			{{/is}}
+		</form>
+	{{/is}}
+
+	{{#is local 'passwordless'}}
+		<form id="local-auth">
+			<div class="messages"></div>
+			<input type="email" placeholder="e-mail address">
+			<button type="submit">Send Login Email</button>
 		</form>
 	{{/is}}
 

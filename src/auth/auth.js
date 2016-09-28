@@ -1,6 +1,5 @@
 import Component from 'can-component';
 import DefineMap from 'can-define/map/';
-import route from 'can-route';
 import './auth.less!';
 import template from './auth.stache';
 import providerIcons from '../provider-icons/index';
@@ -11,8 +10,21 @@ export const ViewModel = DefineMap.extend({
   },
 
   local: {
+    type: 'string'
+  },
+
+  /**
+   * Determines if signup controls are visible in the UI. Any values other than
+   * `none` and `false` will be interpreted as `true`.
+   */
+  localSignup: {
+    value: false,
     set(val){
-      val = val || 'password';
+      if (val === 'none' || val === 'false') {
+        val = false;
+      } else {
+        val = true;
+      }
       return val;
     }
   },
@@ -22,7 +34,7 @@ export const ViewModel = DefineMap.extend({
    */
   tabsShouldShow: {
     get(){
-      return this.localSignup;
+      return this.local === 'password' && this.localSignup;
     }
   },
 
@@ -103,22 +115,6 @@ export const ViewModel = DefineMap.extend({
   },
 
   /**
-   * Determines if signup controls are visible in the UI. Any values other than
-   * `none` and `false` will be interpreted as `true`.
-   */
-  localSignup: {
-    value: false,
-    set(val){
-      if (val === 'none' || val === 'false') {
-        val = false;
-      } else {
-        val = true;
-      }
-      return val;
-    }
-  },
-
-  /**
    * The `session` is bound out to the appstate's `session`, so we can update
    * the appstate's session once the user has logged in.
    */
@@ -133,7 +129,12 @@ export const ViewModel = DefineMap.extend({
    * to make it update the route.
    */
   activeTab: {
-    value: 'login'
+    value() {
+      if(this.localSignup){
+        return 'signup';
+      }
+      return 'login';
+    } 
   },
 
   email: {
@@ -163,6 +164,5 @@ export const ViewModel = DefineMap.extend({
 export default Component.extend({
   tag: 'auth-component',
   ViewModel,
-  template,
-  leakScope: true
+  template
 });

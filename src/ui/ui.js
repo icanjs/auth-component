@@ -13,9 +13,6 @@ export const ViewModel = DefineMap.extend({
     type: 'string'
   },
 
-  /**
-   * Used by the UI tabs to set the activeTab.
-   */
   setActiveTab(tabName) {
     this.activeTab = tabName;
   },
@@ -23,7 +20,7 @@ export const ViewModel = DefineMap.extend({
 
 export default Component.extend({
   tag: 'auth-ui',
-  ViewModel: ViewModel,
+  ViewModel,
   template,
-	leakScope: true
+  leakScope: true
 });
