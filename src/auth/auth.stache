@@ -11,8 +11,4 @@
 	{{#case 'wide'}}
 		<!-- Wide mode not yet implemented. -->
 	{{/case}}
-
-	{{#case 'none'}}
-		<!--  -->
-	{{/case}}
 {{/switch}}

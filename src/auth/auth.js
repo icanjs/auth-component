@@ -9,9 +9,11 @@ export const ViewModel = DefineMap.extend({
     value: 'compact'
   },
 
-  local: {
-    type: 'string'
-  },
+  /*
+   * Specifies the type of local authentication used. For now, the only option is
+   * 'password', but 'passwordless' will be supported in the future.
+   */
+  local: 'string',
 
   /**
    * Determines if signup controls are visible in the UI. Any values other than
@@ -20,12 +22,7 @@ export const ViewModel = DefineMap.extend({
   localSignup: {
     value: false,
     set(val){
-      if (val === 'none' || val === 'false') {
-        val = false;
-      } else {
-        val = true;
-      }
-      return val;
+      return !!val;
     }
   },
 
@@ -56,25 +53,25 @@ export const ViewModel = DefineMap.extend({
 
       if (this.providers) {
         providerList = this.providers.split(',')
-          // filter out any duds.
+          // filter out any unsupported providers.
           .filter(provider => {
-            let providerArray = Object.keys(providerIcons);
-            return providerArray.indexOf(provider.trim()) > -1;
+            return Object.keys(providerIcons).indexOf(provider.trim()) > -1;
           })
           .map(provider => {
-            if (provider) {
-              provider = provider.trim();
-              return {
-                name: provider,
-                template: providerIcons[provider]
-              };
-            }
+            provider = provider.trim();
+            return {
+              name: provider,
+              template: providerIcons[provider]
+            };
           });
       }
       return providerList;
     }
   },
 
+  /*
+   * An object containing svg logos of the providers, keyed by name.
+   */
   providerIcons: {
     value: providerIcons
   },
@@ -100,14 +97,13 @@ export const ViewModel = DefineMap.extend({
   providerCountClass: {
     get(){
       if (this.providerList){
-        if(this.providerList.length === 1) {
-          return 'one';
-        }
-        if (this.providerList && this.providerList.length === 2) {
-          return 'two';
-        }
-        if (this.providerList.length > 2) {
-          return 'many';
+        switch (this.providerList.length) {
+          case 1:
+            return 'one';
+          case 2:
+            return 'two';
+          default:
+            return 'many';
         }
       }
       return this.providerList && this.providerList.length;
@@ -117,16 +113,19 @@ export const ViewModel = DefineMap.extend({
   /**
    * The `session` is bound out to the appstate's `session`, so we can update
    * the appstate's session once the user has logged in.
+   * TODO: eliminate the need for this by implementing streams in app.js
    */
-  session: {
-    type: '*'
-  },
+  session: '*',
 
+  /*
+   * The Session can-connect model.
+   */
   sessionModel: {},
 
   /**
-   * The name of the currently active tab. Bind this to an attribute in your routes
-   * to make it update the route.
+   * The name of the currently active tab. Bind this to a route attribute to change
+   * the tab based on the route. If signup is enabled, 'signup' is the default value, 
+   * otherwise it's 'login'.
    */
   activeTab: {
     value() {
@@ -137,20 +136,12 @@ export const ViewModel = DefineMap.extend({
     } 
   },
 
-  email: {
-    type: 'string'
-  },
-
-  password: {
-    type: 'string'
-  },
-
   login(ev, email, password) {
     ev.preventDefault();
 
     let Session = this.sessionModel;
     if (!Session) {
-      console.error('A session model must be provided to the auth-component.');
+      console.error('A session-model must be provided to the auth-component.');
     }
 
     return new Session({
