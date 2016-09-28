@@ -62,7 +62,7 @@
     "npmAlgorithm": "flat"
   },
   "dependencies": {
-    "can-component": "^3.0.0-pre.14",
+    "can-component": "^3.0.0-pre.16",
     "can-define": "^0.8.2",
     "can-route": "^3.0.0-pre.9",
     "can-stache": "^3.0.0-pre.21",
