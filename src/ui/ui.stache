@@ -38,7 +38,7 @@
 		{{#is activeTab 'login'}}
 			<form id="local-auth" ($submit)="login(%event, email, password)">
 				<div class="messages"></div>
-{{log}}
+
 				<input type="email" placeholder="e-mail address" {($value)}="email">
 				<input type="password" placeholder="password" {($value)}="password">
 
