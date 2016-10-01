@@ -12,10 +12,10 @@ export const ViewModel = DefineMap.extend({
     value: ''
   },
 
-  activeTab: 'string',
+  subpage: 'string',
 
-  setActiveTab(tabName) {
-    this.activeTab = tabName;
+  setSubpage(tabName) {
+    this.subpage = tabName;
   },
 });
 

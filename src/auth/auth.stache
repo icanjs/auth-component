@@ -3,7 +3,7 @@
 {{#switch ui}}
 	{{#case 'compact'}}
 		<auth-ui {base-url}="baseUrl"
-			{(active-tab)}="activeTab">
+			{(subpage)}="subpage">
 			<content></content>
 		</auth-ui>
 	{{/case}}

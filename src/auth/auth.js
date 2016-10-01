@@ -5,6 +5,8 @@ import template from './auth.stache';
 import providerIcons from '../provider-icons/index';
 
 export const ViewModel = DefineMap.extend({
+  seal: false
+}, {
   ui: {
     value: 'compact'
   },
@@ -123,11 +125,11 @@ export const ViewModel = DefineMap.extend({
   sessionModel: {},
 
   /**
-   * The name of the currently active tab. Bind this to a route attribute to change
+   * The name of the currently active auth view. Bind this to a route attribute to change
    * the tab based on the route. If signup is enabled, 'signup' is the default value, 
    * otherwise it's 'login'.
    */
-  activeTab: {
+  subpage: {
     value() {
       if(this.localSignup){
         return 'signup';
@@ -138,6 +140,7 @@ export const ViewModel = DefineMap.extend({
 
   login(ev, email, password) {
     ev.preventDefault();
+    var self = this;
 
     let Session = this.sessionModel;
     if (!Session) {
@@ -148,7 +151,10 @@ export const ViewModel = DefineMap.extend({
       type: 'local',
       email,
       password
-    }).save();
+    }).save().then(response => {
+      response.password = undefined;
+      self.session = response;
+    });
   }
 });
 

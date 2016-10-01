@@ -3,10 +3,10 @@
 	{{!-- Signup / Login tabs can show for username / password auth --}}
 	{{#if tabsShouldShow}}
 		<ul class="local-auth-tabs">
-			<li class="signup {{#is activeTab 'signup'}}active{{/is}}" ($click)="setActiveTab('signup')">
+			<li class="signup {{#is subpage 'signup'}}active{{/is}}" ($click)="setSubpage('signup')">
 				<a href="javascript://">Signup</a>
 			</li>
-			<li class="login {{#is activeTab 'login'}}active{{/is}}" ($click)="setActiveTab('login')">
+			<li class="login {{#is subpage 'login'}}active{{/is}}" ($click)="setSubpage('login')">
 				<a href="javascript://">Login</a>
 			</li>
 		</ul>
@@ -35,7 +35,7 @@
 			<div class="auth-error">Login failed.</div>
 		{{/is}}
 
-		{{#is activeTab 'login'}}
+		{{#is subpage 'login'}}
 			<form id="local-auth" ($submit)="login(%event, email, password)">
 				<div class="messages"></div>
 
@@ -43,7 +43,7 @@
 				<input type="password" placeholder="password" {($value)}="password">
 
 				<div class="forgot-password">
-					{{#is activeTab 'login'}}
+					{{#is subpage 'login'}}
 						<a href="/forgot">forgot password</a>
 					{{/is}}
 				</div>
@@ -51,7 +51,7 @@
 			</form>
 		{{/is}}
 
-		{{#is activeTab 'signup'}}
+		{{#is subpage 'signup'}}
 			<form id="local-auth" ($submit)="signup">
 				<div class="messages"></div>
 
@@ -59,16 +59,16 @@
 				<input type="password" placeholder="password">
 
 				<div class="forgot-password">
-					{{#is activeTab 'login'}}
+					{{#is subpage 'login'}}
 						<a href="/forgot">forgot password</a>
 					{{/is}}
 				</div>
 
-				{{#is activeTab 'login'}}
+				{{#is subpage 'login'}}
 					<button type="submit">Login</button>
 				{{/is}}
 
-				{{#is activeTab 'signup'}}
+				{{#is subpage 'signup'}}
 					<button type="submit">Signup</button>
 				{{/is}}
 			</form>
