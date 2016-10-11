@@ -1,5 +1,8 @@
 <li class="sso-slack {{providerCountClass}}" title="Login with Slack">
-	<a href="{{baseUrl}}/auth/slack">
+
+	<a {{#is oauthFlow 'redirect'}}href="{{providerUrl(providers.slack)}}"{{/is}} 
+	   {{#is oauthFlow 'popup'}}href="javascript://" ($click)="openOauthPopup(%event, providers.slack)"{{/is}}>
+
 		<svg viewBox="0 0 29 29" version="1.1">
 			<title>slack</title>
 			<g id="Stack-Overflow" transform="translate(-14.000000, -12.000000)">

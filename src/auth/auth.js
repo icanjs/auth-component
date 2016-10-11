@@ -46,8 +46,8 @@ export const ViewModel = DefineMap.extend({
   },
 
   /**
-   * An array of the passed-in providers. Used to put the icons in the correct
-   * order.
+   * An array of provider objects with name and template for the passed-in providers. 
+   * It is used to put the icons in the correct order.
    */
   providerList: {
     get(){
@@ -63,11 +63,22 @@ export const ViewModel = DefineMap.extend({
             provider = provider.trim();
             return {
               name: provider,
+              url: this[`${provider}Url`] || `auth/${provider}`,
               template: providerIcons[provider]
             };
           });
       }
       return providerList;
+    }
+  },
+
+  providerMap: {
+    get(){
+      let providerMap = {};
+      this.providerList.forEach(provider => {
+        providerMap[provider.name] = provider;
+      });
+      return providerMap;
     }
   },
 
@@ -124,6 +135,12 @@ export const ViewModel = DefineMap.extend({
    */
   sessionModel: {},
 
+  /*
+   * A pass-through parameter that used by the auth ui components to determine 
+   * the behavior when clicking a social login button.
+   */
+  oauthFlow: 'string',
+
   /**
    * The name of the currently active auth view. Bind this to a route attribute to change
    * the tab based on the route. If signup is enabled, 'signup' is the default value, 
@@ -137,6 +154,12 @@ export const ViewModel = DefineMap.extend({
       return 'login';
     } 
   },
+
+  /*
+   * These are pass-through attributes for the ui's OAuth popup.
+   */
+  popupHeight: 'number',
+  popupWidth: 'number',
 
   login(ev, email, password) {
     ev.preventDefault();

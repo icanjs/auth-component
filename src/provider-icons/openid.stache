@@ -1,5 +1,8 @@
 <li class="sso-openid {{providerCountClass}}" title="Login with OpenID">
-	<a href="{{baseUrl}}/auth/openid">
+
+	<a {{#is oauthFlow 'redirect'}}href="{{providerUrl(providers.openid)}}"{{/is}} 
+	   {{#is oauthFlow 'popup'}}href="javascript://" ($click)="openOauthPopup(%event, providers.openid)"{{/is}}>
+
 		<svg viewBox="0 0 28 26" version="1.1">
 			<title>openid</title>
 			<g id="OpenID" transform="translate(-32.000000, -13.000000)" fill="#FFFFFF">

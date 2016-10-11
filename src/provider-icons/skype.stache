@@ -1,5 +1,8 @@
 <li class="sso-skype {{providerCountClass}}" title="Login with Skype">
-	<a href="{{baseUrl}}/auth/skype">
+
+	<a {{#is oauthFlow 'redirect'}}href="{{providerUrl(providers.skype)}}"{{/is}} 
+	   {{#is oauthFlow 'popup'}}href="javascript://" ($click)="openOauthPopup(%event, providers.skype)"{{/is}}>
+
 		<svg viewBox="0 0 28 28" version="1.1">
 			<title>skype</title>
 			<g id="Skype" transform="translate(-32.000000, -12.000000)" fill="#FFFFFF">

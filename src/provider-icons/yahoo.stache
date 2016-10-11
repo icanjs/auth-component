@@ -1,5 +1,8 @@
 <li class="sso-yahoo {{providerCountClass}}" title="Login with Yahoo">
-	<a href="{{baseUrl}}/auth/yahoo">
+
+	<a {{#is oauthFlow 'redirect'}}href="{{providerUrl(providers.yahoo)}}"{{/is}} 
+	   {{#is oauthFlow 'popup'}}href="javascript://" ($click)="openOauthPopup(%event, providers.yahoo)"{{/is}}>
+
 		<svg viewBox="0 0 28 26" version="1.1">
 			<title>yahoo</title>
 			<g id="Yahoo" transform="translate(-32.000000, -13.000000)" fill="#FFFFFF">

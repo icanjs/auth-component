@@ -1,5 +1,8 @@
 <li class="sso-stack-overflow {{providerCountClass}}" title="Login with Stack Overflow">
-	<a href="{{baseUrl}}/auth/stack-overflow">
+
+	<a {{#is oauthFlow 'redirect'}}href="{{providerUrl(providers.stackoverflow)}}"{{/is}} 
+	   {{#is oauthFlow 'popup'}}href="javascript://" ($click)="openOauthPopup(%event, providers.stackoverflow)"{{/is}}>
+
 		<svg viewBox="0 0 23 28" version="1.1">
 			<title>stackoverflow</title>
 			<g id="Stack-Overflow" transform="translate(-17.000000, -12.000000)" fill="#FFFFFF">
