@@ -1,5 +1,8 @@
 <li class="sso-amazon {{providerCountClass}}" title="Login with Amazon">
-	<a href="{{baseUrl}}/auth/amazon">
+
+	<a {{#is oauthFlow 'redirect'}}href="{{providerUrl(providers.amazon)}}"{{/is}} 
+	   {{#is oauthFlow 'popup'}}href="javascript://" ($click)="openOauthPopup(%event, providers.amazon)"{{/is}}>
+
 		<svg viewBox="0 0 28 26">
 			<title>amazon</title>
 			<g id="Amazon" transform="translate(-31.000000, -13.000000)" fill="#000000">

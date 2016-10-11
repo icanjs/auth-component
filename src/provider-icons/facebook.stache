@@ -1,5 +1,8 @@
 <li class="sso-facebook {{providerCountClass}}" title="Login with Facebook">
-	<a href="{{baseUrl}}/auth/facebook">
+
+	<a {{#is oauthFlow 'redirect'}}href="{{providerUrl(providers.facebook)}}"{{/is}} 
+	   {{#is oauthFlow 'popup'}}href="javascript://" ($click)="openOauthPopup(%event, providers.facebook)"{{/is}}>
+	
 		<svg viewBox="0 0 30 30" version="1.1">
 			<title>facebook</title>
 			<g id="Facebook" transform="translate(-31.000000, -11.000000)" fill="#FFFFFF">

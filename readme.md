@@ -10,6 +10,24 @@ Find docs for the old version here: https://github.com/marshallswain/auth-compon
 
 ## Usage
 
+
+## OAuth Providers
+The default OAuth provider URLs are based on the `base-url` attribute and match the ones setup by FeathersJS' excellent [feathers-authentication](http://github.com/feathersjs/feathers-authentication) plugin.  Without a `base-url`, they are relative to the current host (domain + port). 
+
+```html
+<!-- Example default GitHub URL with base-url attribute set to `http://localhost:3030` -->
+<a href="http://localhost:3030/auth/github">Login with GitHub</a>
+```
+
+You can customize the URL for any provider by using the `<providername>-url` attribute.  In the following example, the `github-url` attribute is used to override the default one.
+
+```html
+<!-- Change the GitHub button's URL. -->
+<auth-component base-url="http://localhost:3030" github-url="https://my-custom-auth-page.com/github"></auth-component>
+```
+
+If any provider URL contains a `://` it will be considered an absolute URL.  Without the `://` it will be appended (relative) to the current host.
+
 ### ES6 use
 
 With StealJS, you can import this module directly in a template that is autorendered:

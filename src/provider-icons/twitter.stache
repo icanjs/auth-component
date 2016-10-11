@@ -1,5 +1,8 @@
 <li class="sso-twitter {{providerCountClass}}" title="Login with Twitter">
-	<a href="{{baseUrl}}/auth/twitter">
+
+	<a {{#is oauthFlow 'redirect'}}href="{{providerUrl(providers.twitter)}}"{{/is}} 
+	   {{#is oauthFlow 'popup'}}href="javascript://" ($click)="openOauthPopup(%event, providers.twitter)"{{/is}}>
+
 		<svg viewBox="0 0 30 24" version="1.1">
 			<title>twitter</title>
 			<g id="Twitter" transform="translate(-31.000000, -14.000000)" fill="#FFFFFF">
