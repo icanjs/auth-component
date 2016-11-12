@@ -14,10 +14,10 @@ export const ViewModel = DefineMap.extend({
 
   subpage: 'string',
 
-  setSubpage(tabName) {
+  setSubpage (tabName) {
     this.subpage = tabName;
   },
-  
+
   /*
    * Bound to `providerMap` in the auth-component.
    */
@@ -26,9 +26,9 @@ export const ViewModel = DefineMap.extend({
   /*
    * providerUrl is a template helper function that assembles the url for a provider.
    */
-  providerUrl(provider){
+  providerUrl (provider) {
     // Assume it's an absolute URL if '://' is included in the provider url.
-    if(provider.url.includes('://')){
+    if (provider.url.includes('://')) {
       return provider.url;
     }
     // If not an absolute URL, assemble one.
@@ -61,7 +61,7 @@ export const ViewModel = DefineMap.extend({
   /*
    * Returns the coordinates to center a popup window with the provided width and height args.
    */
-  getCenterCoordinates(window, popupWidth, popupHeight){
+  getCenterCoordinates (window, popupWidth, popupHeight) {
     return {
       left: window.screenX + (window.outerWidth - popupWidth) / 2,
       top: window.screenY + (window.outerHeight - popupHeight) / 2
@@ -71,12 +71,12 @@ export const ViewModel = DefineMap.extend({
   /*
    * A helper template to that opens the provided OAuth provider's URL in a centered popup.
    */
-  openOauthPopup(ev, provider){
-    if(this.oauthFlow === 'popup'){
+  openOauthPopup (ev, provider) {
+    if (this.oauthFlow === 'popup') {
       ev.preventDefault();
     }
-    let url = this.providerUrl(provider),
-      coords = this.getCenterCoordinates(window, this.popupWidth, this.popupHeight);
+    let url = this.providerUrl(provider);
+    let coords = this.getCenterCoordinates(window, this.popupWidth, this.popupHeight);
     this.authWindow = window.open(url, 'authWindow', `width=${this.popupWidth}, height=${this.popupHeight}, top=${coords.top}, left=${coords.left}`);
   }
 });

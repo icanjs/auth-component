@@ -23,7 +23,7 @@ export const ViewModel = DefineMap.extend({
    */
   localSignup: {
     value: false,
-    set(val){
+    set (val) {
       return !!val;
     }
   },
@@ -32,7 +32,7 @@ export const ViewModel = DefineMap.extend({
    * Tabs should only show if local login is set to password and signup is enabled.
    */
   tabsShouldShow: {
-    get(){
+    get () {
       return this.local === 'password' && this.localSignup;
     }
   },
@@ -46,11 +46,11 @@ export const ViewModel = DefineMap.extend({
   },
 
   /**
-   * An array of provider objects with name and template for the passed-in providers. 
+   * An array of provider objects with name and template for the passed-in providers.
    * It is used to put the icons in the correct order.
    */
   providerList: {
-    get(){
+    get () {
       let providerList;
 
       if (this.providers) {
@@ -73,7 +73,7 @@ export const ViewModel = DefineMap.extend({
   },
 
   providerMap: {
-    get(){
+    get () {
       let providerMap = {};
       this.providerList.forEach(provider => {
         providerMap[provider.name] = provider;
@@ -94,7 +94,7 @@ export const ViewModel = DefineMap.extend({
    * been enabled.
    */
   providerCount: {
-    get(){
+    get () {
       return this.providerList && this.providerList.length || 0;
     }
   },
@@ -108,8 +108,8 @@ export const ViewModel = DefineMap.extend({
    * the icon.)
    */
   providerCountClass: {
-    get(){
-      if (this.providerList){
+    get () {
+      if (this.providerList) {
         switch (this.providerList.length) {
           case 1:
             return 'one';
@@ -136,23 +136,23 @@ export const ViewModel = DefineMap.extend({
   sessionModel: {},
 
   /*
-   * A pass-through parameter that used by the auth ui components to determine 
+   * A pass-through parameter that used by the auth ui components to determine
    * the behavior when clicking a social login button.
    */
   oauthFlow: 'string',
 
   /**
    * The name of the currently active auth view. Bind this to a route attribute to change
-   * the tab based on the route. If signup is enabled, 'signup' is the default value, 
+   * the tab based on the route. If signup is enabled, 'signup' is the default value,
    * otherwise it's 'login'.
    */
   subpage: {
-    value() {
-      if(this.localSignup){
+    value () {
+      if (this.localSignup) {
         return 'signup';
       }
       return 'login';
-    } 
+    }
   },
 
   /*
@@ -161,7 +161,7 @@ export const ViewModel = DefineMap.extend({
   popupHeight: 'number',
   popupWidth: 'number',
 
-  login(ev, email, password) {
+  login (ev, email, password) {
     ev.preventDefault();
     var self = this;
 

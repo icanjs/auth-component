@@ -15,19 +15,19 @@ import twitter from './twitter.stache';
 import yahoo from './yahoo.stache';
 
 export default {
-	amazon,
-	dropbox,
-	evernote,
-	facebook,
-	github,
-	google,
-	linkedin,
-	microsoft,
-	openid,
-	paypal,
-	skype,
-	slack,
-	stackoverflow,
-	twitter,
-	yahoo
+  amazon,
+  dropbox,
+  evernote,
+  facebook,
+  github,
+  google,
+  linkedin,
+  microsoft,
+  openid,
+  paypal,
+  skype,
+  slack,
+  stackoverflow,
+  twitter,
+  yahoo
 };

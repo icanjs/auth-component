@@ -5,7 +5,7 @@ import providerIcons from '../provider-icons/index';
 // ViewModel unit tests
 QUnit.module('auth-component/auth');
 
-QUnit.test('Default Values', function(){
+QUnit.test('Default Values', function () {
   var vm = new ViewModel();
   QUnit.equal(vm.ui, 'compact', 'Default UI is compact.');
   QUnit.equal(vm.local, undefined, 'Local auth off.');
