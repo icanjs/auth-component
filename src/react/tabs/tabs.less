@@ -1,0 +1,27 @@
+ul.auth-component-tabs {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  display: flex;
+  font-size: 16px;
+  font-weight: 400;
+
+  li {
+    height: 56px;
+    line-height: 56px;
+    width: 50%;
+    text-align: center;
+    &:not(.active){
+      background: #77BFED;
+      a {
+        color: white;
+        display:block;
+        height: 100%;
+        width: 100%;
+      }
+    }
+  }
+  a:active, a:focus, a:hover, a:visited {
+    text-decoration: none;
+  }
+}
