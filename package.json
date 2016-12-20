@@ -50,23 +50,26 @@
       "steal-css",
       "steal-less",
       "steal-stache",
-      "steal-react-jsx"
+      "steal-react-jsx",
+      "steal-svg"
     ],
     "directories": {
       "lib": "src"
+    },
+    "ext": {
+      "svg": "steal-svg"
     }
   },
   "dependencies": {
     "can-component": "^3.0.4",
     "can-define": "^1.0.8",
-    "can-stache": "^3.0.16",
-    "can-stache-bindings": "^3.0.6",
     "feathers-authentication-popups": "^0.1.2",
+    "react-svg-inline": "^1.2.0",
     "steal-css": "^1.0.0",
-    "steal-jsx": "^0.0.2",
     "steal-less": "^1.0.1",
     "steal-react-jsx": "^0.0.3",
-    "steal-stache": "^3.0.4"
+    "steal-stache": "^3.0.4",
+    "steal-svg": "^0.0.3"
   },
   "devDependencies": {
     "can-view-autorender": "^3.0.3",

@@ -1269,7 +1269,7 @@ can-simple-map@^3.0.0:
     can-types "^1.0.1"
     can-util "^3.1.1"
 
-can-stache-bindings@^3.0.5, can-stache-bindings@^3.0.6:
+can-stache-bindings@^3.0.5:
   version "3.0.6"
   resolved "https://registry.yarnpkg.com/can-stache-bindings/-/can-stache-bindings-3.0.6.tgz#84c62c9d9b45d8c38b6f987db230ddbab772f192"
   dependencies:
@@ -1284,7 +1284,7 @@ can-stache-bindings@^3.0.5, can-stache-bindings@^3.0.6:
     can-view-model "^3.0.0"
     can-view-scope "^3.0.0"
 
-can-stache@^3.0.1, can-stache@^3.0.13, can-stache@^3.0.16:
+can-stache@^3.0.1, can-stache@^3.0.13:
   version "3.0.16"
   resolved "https://registry.yarnpkg.com/can-stache/-/can-stache-3.0.16.tgz#a59fc8d49e62b63469f9d0b837c31f099773707d"
   dependencies:
@@ -1471,6 +1471,10 @@ cipher-base@^1.0.0, cipher-base@^1.0.1:
 circular-json@^0.3.0:
   version "0.3.1"
   resolved "https://registry.yarnpkg.com/circular-json/-/circular-json-0.3.1.tgz#be8b36aefccde8b3ca7aa2d6afc07a37242c0d2d"
+
+classnames@^2.2.1:
+  version "2.2.5"
+  resolved "https://registry.yarnpkg.com/classnames/-/classnames-2.2.5.tgz#fb3801d453467649ef3603c7d61a02bd129bde6d"
 
 clean-css@3.4.18:
   version "3.4.18"
@@ -3969,6 +3973,12 @@ react-dom@^15.4.1:
     loose-envify "^1.1.0"
     object-assign "^4.1.0"
 
+react-svg-inline@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/react-svg-inline/-/react-svg-inline-1.2.0.tgz#a02bf81a0ed7615e3194a014b58d98aea5521fd5"
+  dependencies:
+    classnames "^2.2.1"
+
 react@^15.4.1:
   version "15.4.1"
   resolved "https://registry.yarnpkg.com/react/-/react-15.4.1.tgz#498e918602677a3983cd0fd206dfe700389a0dd6"
@@ -4569,10 +4579,6 @@ steal-es6-module-loader@^0.17.0:
   dependencies:
     when "3.7.5"
 
-steal-jsx@^0.0.2:
-  version "0.0.2"
-  resolved "https://registry.yarnpkg.com/steal-jsx/-/steal-jsx-0.0.2.tgz#333c6d2207f802c7bd8743d9c9fd2364ba9c7086"
-
 steal-less@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/steal-less/-/steal-less-1.0.1.tgz#c4325059ac7d690e5c35ec958aacc449b4ed2f70"
@@ -4599,6 +4605,10 @@ steal-stache@^3.0.0, steal-stache@^3.0.4:
     can-stache-bindings "^3.0.5"
     can-view-import "^3.0.3"
     jquery "2.x - 3.x"
+
+steal-svg@^0.0.3:
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/steal-svg/-/steal-svg-0.0.3.tgz#976f55f6dfc4cb8174d0bec2029170b9b34c01a0"
 
 steal-systemjs@0.18.5:
   version "0.18.5"
