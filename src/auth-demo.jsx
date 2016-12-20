@@ -1,5 +1,4 @@
 import React from 'react';
-// import AuthButton from './buttons/button.jsx';
 import AmazonButton from './buttons/amazon/';
 import DropboxButton from './buttons/dropbox/';
 import EvernoteButton from './buttons/evernote/';
@@ -37,21 +36,20 @@ export default ({subpage, setSubpage}) => {
         </div>
 
         <div className='sso-providers one'>
-          {/* <AuthButton name='Twitter' url='https://twitter.com' img='/src/components/auth/svg/twitter.svg' popup='true' /> */}
-          <AmazonButton url='https://amazon.com' popup='true' />
-          <DropboxButton url='https://dropbox.com' popup='true' />
-          <EvernoteButton url='https://evernote.com' popup='true' />
-          <FacebookButton url='https://github.com' popup='true' />
-          <GitHubButton url='https://github.com' popup='true' />
-          <GoogleButton url='https://google.com' popup='true' />
-          <LinkedInButton url='https://linkedin.com' popup='true' />
-          <MicrosoftButton url='https://microsoft.com' popup='true' />
-          <OpenIDButton url='https://openid.com' popup='true' />
-          <PaypalButton url='https://paypal.com' popup='true' />
-          <SkypeButton url='https://skype.com' popup='true' />
-          <SlackButton url='https://slack.com' popup='true' />
-          <TwitterButton url='https://twitter.com' popup='true' />
-          <YahooButton url='https://yahoo.com' popup='true' />
+          <AmazonButton popup='true' />
+          <DropboxButton popup='true' />
+          <EvernoteButton popup='true' />
+          <FacebookButton popup='true' />
+          <GitHubButton popup='true' />
+          <GoogleButton popup='true' />
+          <LinkedInButton popup='true' />
+          <MicrosoftButton popup='true' />
+          <OpenIDButton popup='true' />
+          <PaypalButton popup='true' />
+          <SkypeButton popup='true' />
+          <SlackButton popup='true' />
+          <TwitterButton popup='true' />
+          <YahooButton popup='true' />
         </div>
       </div>
     </div>
