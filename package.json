@@ -64,6 +64,8 @@
     "can-component": "^3.0.4",
     "can-define": "^1.0.8",
     "feathers-authentication-popups": "^0.1.2",
+    "react": "^15.4.1",
+    "react-dom": "^15.4.1",
     "react-svg-inline": "^1.2.0",
     "steal-css": "^1.0.0",
     "steal-less": "^1.0.1",
