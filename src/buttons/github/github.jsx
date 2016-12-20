@@ -1,11 +1,12 @@
 import React from 'react';
 import AuthButton from '../button.jsx';
+import svg from './github.svg';
 
 export default ({name, url, img, alt, text, popup}) => {
   return (
     <AuthButton name={name || 'GitHub'}
       url={url || '/auth/github'}
-      img='/src/components/auth/buttons/github/github.svg'
+      svg={svg}
       alt={alt}
       text={text}
       popup={popup}
