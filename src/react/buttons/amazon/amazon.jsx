@@ -1,11 +1,13 @@
 import React from 'react';
-import AuthButton from '../button.jsx';
+import AuthButton from '../button';
+import './amazon.less';
+import logo from './amazon.svg';
 
 export default ({name, url, img, alt, text, popup}) => {
   return (
     <AuthButton name={name || 'Amazon'}
       url={url || '/auth/amazon'}
-      img='/src/components/auth/buttons/amazon/amazon.svg'
+      logo={logo}
       alt={alt}
       text={text}
       popup={popup}
