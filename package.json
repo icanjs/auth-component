@@ -1,11 +1,11 @@
 {
-  "name": "can-auth-component",
-  "version": "0.0.1",
-  "description": "Authentication components for CanJS",
+  "name": "auth-component",
+  "version": "3.2.1",
+  "description": "Authentication components for DoneJS & React",
   "homepage": "https://github.com/icanjs/auth-component",
   "repository": {
     "type": "git",
-    "url": "git://github.com/icanjs/can-auth-component.git"
+    "url": "git://github.com/icanjs/auth-component.git"
   },
   "author": {
     "name": "Marshall Thompson",
@@ -35,7 +35,7 @@
     "authentication"
   ],
   "system": {
-    "main": "can-auth-component",
+    "main": "auth-component",
     "configDependencies": [
       "live-reload"
     ],
@@ -50,6 +50,7 @@
       "steal-css",
       "steal-less",
       "steal-stache",
+      "steal-react-jsx",
       "steal-svg"
     ],
     "directories": {
@@ -62,11 +63,11 @@
   "dependencies": {
     "can-component": "^3.0.4",
     "can-define": "^1.0.8",
-    "can-stache": "^3.0.16",
-    "can-stache-bindings": "^3.0.6",
     "feathers-authentication-popups": "^0.1.2",
+    "react-svg-inline": "^1.2.0",
     "steal-css": "^1.0.0",
     "steal-less": "^1.0.1",
+    "steal-react-jsx": "^0.0.3",
     "steal-stache": "^3.0.4",
     "steal-svg": "^0.0.3"
   },
