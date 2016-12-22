@@ -67,6 +67,7 @@
     "react": "^15.4.1",
     "react-dom": "^15.4.1",
     "react-svg-inline": "^1.2.0",
+    "react-view-models": "^0.0.7",
     "steal-css": "^1.0.0",
     "steal-less": "^1.0.1",
     "steal-react-jsx": "^0.0.3",

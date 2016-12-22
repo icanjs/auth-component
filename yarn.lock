@@ -1148,7 +1148,7 @@ can-component@^3.0.4:
     can-view-nodelist "^3.0.2"
     can-view-scope "^3.1.1"
 
-can-compute@^3.0.0, can-compute@^3.0.4:
+can-compute@^3.0.0, can-compute@^3.0.3, can-compute@^3.0.4:
   version "3.0.5"
   resolved "https://registry.yarnpkg.com/can-compute/-/can-compute-3.0.5.tgz#a61184a09001b68dd860a642ae5be03cbd719fa2"
   dependencies:
@@ -1179,7 +1179,7 @@ can-control@^3.0.4:
     can-types "^1.0.1"
     can-util "^3.1.1"
 
-can-define@^1.0.8:
+can-define@^1.0.4, can-define@^1.0.8:
   version "1.0.8"
   resolved "https://registry.yarnpkg.com/can-define/-/can-define-1.0.8.tgz#e14c1355032a6fa5709c996fadb8d2bf845a079f"
   dependencies:
@@ -3979,7 +3979,15 @@ react-svg-inline@^1.2.0:
   dependencies:
     classnames "^2.2.1"
 
-react@^15.4.1:
+react-view-models@^0.0.7:
+  version "0.0.7"
+  resolved "https://registry.yarnpkg.com/react-view-models/-/react-view-models-0.0.7.tgz#4ed13edfd365017f8aae7a8850cf0d1e43a2a02f"
+  dependencies:
+    can-compute "^3.0.3"
+    can-define "^1.0.4"
+    react "^15.4.0"
+
+react@^15.4.0, react@^15.4.1:
   version "15.4.1"
   resolved "https://registry.yarnpkg.com/react/-/react-15.4.1.tgz#498e918602677a3983cd0fd206dfe700389a0dd6"
   dependencies:
