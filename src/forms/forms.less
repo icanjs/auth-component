@@ -1,43 +1,45 @@
-form {
-		text-align: center;
-		font-size: 16px;
-		margin-top: 22px;
+form.auth-component-form {
+	text-align: center;
+	font-size: 16px;
+	margin-top: 22px;
 
-		input[type=email], input[type=text], input[type=password] {
-			border-bottom: solid 1px #E6E6E6;
-			border-top: none;
-			border-left: none;
-			border-right: none;
-			height: 30px;
-			width: calc(100% - 10px);
-			text-align: center;
-			padding: 6px 0 2px;
-			margin-bottom: 4px;
-			outline: none;
-			font-size: 14px;
-			box-sizing: content-box;
-
-			&:focus {
-				border-bottom: solid 1px #77BFED;
-			}
-		}
-
-		div.forgot-password {
-			margin-top: 12px;
-			height: 15px;
-			font-size: 12px;
-			a {
-				color: #77BFED;
-			}
-		}
-
-		button {
-			width: calc(100% - 10px);
-			height: 52px;
-			background: #77BFED;
-			border: none;
-			color: white;
-			margin-top: 22px;
-			font-size: 16px;
+	div.forgot-password {
+		margin-top: 12px;
+		height: 15px;
+		font-size: 12px;
+		a {
+			color: #77BFED;
 		}
 	}
+
+	input[type=email].auth-component-input,
+	input[type=text].auth-component-input,
+	input[type=password].auth-component-input {
+		border-bottom: solid 1px #E6E6E6;
+		border-top: none;
+		border-left: none;
+		border-right: none;
+		height: 30px;
+		width: calc(100% - 10px);
+		text-align: center;
+		padding: 6px 0 2px;
+		margin-bottom: 4px;
+		outline: none;
+		font-size: 14px;
+		box-sizing: content-box;
+
+		&:focus {
+			border-bottom: solid 1px #77BFED;
+		}
+	}
+
+	button {
+		width: calc(100% - 10px);
+		height: 52px;
+		background: #77BFED;
+		border: none;
+		color: white;
+		margin-top: 22px;
+		font-size: 16px;
+	}
+}
