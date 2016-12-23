@@ -46,6 +46,14 @@ ReactDOM.render(
         usernameField='username'
         usernamePlaceholder='username' />
     </div>
+
+    <div className='container error'>
+      <h2>Login - Error</h2>
+      <LoginForm Model={DummyModel}
+        handleLogin={() => Promise.reject('No soup for you!')}
+        onSuccess={handleSuccess}
+        onError={error => { console.log(error); }} />
+    </div>
   </div>,
   document.querySelector('[root=true]')
 );
