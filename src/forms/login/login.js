@@ -36,16 +36,16 @@ export const ViewModel = DefineMap.extend({
   },
 
   /**
-   * This is a can-connect compatible Model. Passing a model will create a new
+   * `Model` is a can-connect compatible Model. Passing a model will create a new
    * model instance and save it to the server.
    */
   Model: 'any',
 
   /**
-   * This is the handler for the form submit. It calls `handleLogin` 
+   * `loginClicked` is the handler for the form submit. It calls `handleLogin` 
    * with the auth data.
    */
-  loginFn (event) {
+  loginClicked (event) {
     event.preventDefault();
     this.handleLogin(this.username, this.password);
   },
@@ -62,22 +62,49 @@ export const ViewModel = DefineMap.extend({
     };
     // If a can-connect Model was provided
     if (this.Model) {
-      new this.Model(authData).save().then(this.onSuccess);
+      new this.Model(authData).save()
+        .then(this.onSuccess)
+        .catch(this.onError);
     // If a Feathers service was provided.
     } else if (this.service) {
-      this.service.create(authData).then(this.onSuccess);
+      this.service.create(authData)
+        .then(this.onSuccess)
+        .catch(this.onError);
     } else {
       console.warn(`You must provide a Model or service attribute, or overwrite the handleLogin function to use the login form.`);
     }
   },
 
   /**
-   * This function gets run when a successful login response was received. In most
+   * `loginClicked` is the handler for the form submit. It calls `handleLogin`
+   * with the auth data.
+   */
+  forgotClicked (event) {
+    event.preventDefault();
+    this.onForgot(this.username, this.password);
+  },
+
+  /**
+   * `handleForgot` is the function that gets run with the "forgot password" link is clicked.
+   */
+  onForgot () {
+    console.warn(`Pass an "onForgot" function to the login form to handle "forgot password" clicks.`);
+  },
+
+  /**
+   * `onSuccess` function gets run when a successful login response was received. In most
    * cases, it will probably need to be overwritten to handle custom requirements
    * after login.
    */
   onSuccess (data) {
-    console.warn(`Pass an "onSuccess" attribute to the login form to handle successful login.`);
+    console.warn(`Pass an "onSuccess" function to the login form to handle successful login.`);
+  },
+
+  /**
+   * If login fails, `onError` will be run.
+   */
+  onFailure (error) {
+    console.error(error);
   }
 });
 

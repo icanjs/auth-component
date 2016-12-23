@@ -1,16 +1,17 @@
 import React from 'react';
 
 export default ({
-  loginFn,
   usernameField,
   usernamePlaceholder,
   username,
   password,
   usernameChanged,
-  passwordChanged
+  passwordChanged,
+  loginClicked,
+  forgotClicked
 }) => {
   return (
-    <form className='auth-component-form' onSubmit={loginFn}>
+    <form className='auth-component-form' onSubmit={loginClicked}>
       <div className='messages' />
 
       <input className='auth-component-input'
@@ -30,8 +31,9 @@ export default ({
         onChange={passwordChanged} />
 
       <div className='forgot-password'>
-        <a href='/forgot' tabIndex='2'>forgot password</a>
+        <a href='javascript://' onClick={forgotClicked} tabIndex='2'>forgot password</a>
       </div>
+
       <button type='submit' tabIndex='1'>Login</button>
     </form>
   );
