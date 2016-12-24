@@ -3,6 +3,6 @@
  */
 export function devWarning (message) {
   if (window.location.hostname === 'localhost') {
-    console.warn(message + `This message will not show in production.`);
+    console.warn(`${message} This message will not show in production.`);
   }
 }
