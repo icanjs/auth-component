@@ -32,6 +32,10 @@ export default ({
         tabIndex='1'
         onChange={passwordChanged} />
 
+      <div className='forgot-password'>
+        {/* password strength meter will go here */}
+      </div>
+
       <button type='submit' tabIndex='1'>{buttonText}</button>
     </form>
   );
