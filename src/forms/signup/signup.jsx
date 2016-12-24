@@ -1,15 +1,38 @@
 import React from 'react';
 
-export default ({login, email, password}) => {
+export default ({
+  usernameField,
+  usernamePlaceholder,
+  username,
+  usernameChanged,
+  password,
+  passwordPlaceholder,
+  passwordChanged,
+  submitClicked,
+  forgotClicked,
+  buttonText
+}) => {
   return (
-    <form id='local-auth' onSubmit={login}>
+    <form className='auth-component-form' onSubmit={submitClicked}>
       <div className='messages' />
 
-      <input type='email' placeholder='e-mail address' value={email} />
-      <input type='password' placeholder='password' value={password} />
+      <input className='auth-component-input'
+        type={usernameField === 'email' ? 'email' : 'text'}
+        placeholder={usernamePlaceholder}
+        value={username}
+        required
+        tabIndex='1'
+        onChange={usernameChanged} />
 
-      <div className='forgot-password' />
-      <button type='submit'>Login</button>
+      <input className='auth-component-input'
+        type='password'
+        placeholder='password'
+        value={password}
+        required
+        tabIndex='1'
+        onChange={passwordChanged} />
+
+      <button type='submit' tabIndex='1'>{buttonText}</button>
     </form>
   );
 };
