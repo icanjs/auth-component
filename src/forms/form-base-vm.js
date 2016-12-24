@@ -38,7 +38,7 @@ export default DefineMap.extend({
    */
   passwordField: {
     type: 'string',
-    value: 'email'
+    value: 'password'
   },
   /**
    * The value in the password field.
