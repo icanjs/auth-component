@@ -4,14 +4,16 @@ export default ({
   usernameField,
   usernamePlaceholder,
   username,
-  password,
   usernameChanged,
+  password,
+  passwordPlaceholder,
   passwordChanged,
-  loginClicked,
-  forgotClicked
+  submitClicked,
+  forgotClicked,
+  buttonText
 }) => {
   return (
-    <form className='auth-component-form' onSubmit={loginClicked}>
+    <form className='auth-component-form' onSubmit={submitClicked}>
       <div className='messages' />
 
       <input className='auth-component-input'
@@ -34,7 +36,7 @@ export default ({
         <a href='javascript://' onClick={forgotClicked} tabIndex='2'>forgot password</a>
       </div>
 
-      <button type='submit' tabIndex='1'>Login</button>
+      <button type='submit' tabIndex='1'>{buttonText}</button>
     </form>
   );
 };
