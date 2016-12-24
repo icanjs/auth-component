@@ -1,6 +1,6 @@
 import { connect } from 'react-view-models';
 import DefineMap from 'can-define/map/';
-import Template from './tabs.jsx';
+import View from './tabs.jsx';
 import route from 'can-route';
 import './tabs.less';
 
@@ -24,4 +24,4 @@ export const ViewModel = DefineMap.extend({
   }
 });
 
-export default connect(ViewModel, Template);
+import View fromexport default connect(ViewModel, View);

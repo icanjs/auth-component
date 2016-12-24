@@ -1,6 +1,6 @@
 import { connect } from 'react-view-models';
 import DefineMap from 'can-define/map/';
-import Template from './signup.jsx';
+import View from './signup.jsx';
 import '../forms.less';
 
 export const ViewModel = DefineMap.extend({
@@ -16,4 +16,4 @@ export const ViewModel = DefineMap.extend({
   }
 });
 
-export default connect(ViewModel, Template);
+export default connect(ViewModel, View);

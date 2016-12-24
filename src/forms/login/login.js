@@ -1,6 +1,6 @@
 import { connect } from 'react-view-models';
 import DefineMap from 'can-define/map/';
-import Template from './login.jsx';
+import View from './login.jsx';
 import '../forms.less';
 import {devWarning} from 'auth-component/utils';
 
@@ -132,4 +132,4 @@ export const ViewModel = DefineMap.extend({
   }
 });
 
-export default connect(ViewModel, Template);
+export default connect(ViewModel, View);
