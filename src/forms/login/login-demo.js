@@ -50,9 +50,9 @@ ReactDOM.render(
     <div className='container error'>
       <h2>Login - Error</h2>
       <LoginForm Model={DummyModel}
-        handleLogin={() => Promise.reject('No soup for you!')}
+        handleSubmit={() => Promise.reject('Invalid everything! No soup for you!')}
         onSuccess={handleSuccess}
-        onError={error => { console.log(error); }} />
+        onError={error => { console.error(error); }} />
     </div>
   </div>,
   document.querySelector('[root=true]')
