@@ -112,7 +112,7 @@ export default DefineMap.extend({
       return this.service.create(authData);
     // A handleSubmit function has to be provided.
     } else {
-      this.warn(`${this.formName}: You must provide a Model or service attribute, or overwrite the handleSubmit function.`);
+      return Promise.reject(new Error(`${this.formName}: You must provide a Model or service attribute, or overwrite the handleSubmit function.`));
     }
   },
 
