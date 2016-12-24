@@ -28,9 +28,8 @@ ReactDOM.render(
   <div>
     <div className='container standalone'>
       <h2>Login - React Standalone</h2>
-      <LoginForm handleLogin={(email, password) => {
-        console.log(email);
-        console.log(password);
+      <LoginForm handleLogin={authData => {
+        console.log(authData);
       }} />
     </div>
 
