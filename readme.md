@@ -77,7 +77,7 @@ import FacebookButton from 'auth-component/buttons/facebook/facebook';
 <FacebookButton url='/auth/facebook' popup={true} />
 ```
 
-![AuthComponent Buttons Demo](https://cloud.githubusercontent.com/assets/128857/21478359/df7977a6-cb07-11e6-9151-5a2e7c119499.jpg)
+![AuthComponent Buttons Demo](https://cloud.githubusercontent.com/assets/128857/21478412/70751af8-cb08-11e6-8305-807c6fd0777b.jpg)
 
 ## Contributing
 
