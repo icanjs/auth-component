@@ -71,10 +71,10 @@
     "steal-css": "^1.0.0",
     "steal-less": "^1.0.1",
     "steal-react-jsx": "^0.0.3",
-    "steal-stache": "^3.0.4",
     "steal-svg": "^0.0.3"
   },
   "devDependencies": {
+    "can-route": "^3.0.6",
     "can-view-autorender": "^3.0.3",
     "done-serve": "^0.2.0",
     "semistandard": "^9.1.0",
