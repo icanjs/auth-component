@@ -2,78 +2,83 @@
 
 [![Build Status](https://travis-ci.org/icanjs/auth-component.png?branch=master)](https://travis-ci.org/icanjs/auth-component)
 
-Simple authentication utilities for DoneJS
+Compose a clean Auth UI with these simple React components.
 
-Find docs for the old version here: https://github.com/marshallswain/auth-component
+There is also a matching CanJS Stache version: https://github.com/icanjs/can-auth-component
 
 ![auth-component UI](auth-component.jpg)
 
 ## Usage
 
-
-## OAuth Providers
-The default OAuth provider URLs are based on the `base-url` attribute and match the ones setup by FeathersJS' excellent [feathers-authentication](http://github.com/feathersjs/feathers-authentication) plugin.  Without a `base-url`, they are relative to the current host (domain + port). 
-
-```html
-<!-- Example default GitHub URL with base-url attribute set to `http://localhost:3030` -->
-<a href="http://localhost:3030/auth/github">Login with GitHub</a>
-```
-
-You can customize the URL for any provider by using the `<providername>-url` attribute.  In the following example, the `github-url` attribute is used to override the default one.
-
-```html
-<!-- Change the GitHub button's URL. -->
-<auth-component base-url="http://localhost:3030" github-url="https://my-custom-auth-page.com/github"></auth-component>
-```
-
-If any provider URL contains a `://` it will be considered an absolute URL.  Without the `://` it will be appended (relative) to the current host.
-
-### ES6 use
-
-With StealJS, you can import this module directly in a template that is autorendered:
-
 ```js
 import plugin from 'auth-component';
 ```
 
-### CommonJS use
+## Buttons
 
-Use `require` to load `auth-component` and everything else
-needed to create a template that uses `auth-component`:
+A Generic button and a bunch of ready-to-use buttons are included.
+
+### Generic Auth Button
+
+The generic button is the base for all of the other buttons.  You can use it to make your own auth buttons.  Here's how the Facebook button implements the generic button:
+
+```jsx
+import React from 'react';
+import AuthButton from '../button.jsx';
+import svg from './facebook.svg';
+
+export default ({name, url, img, alt, text, popup}) => {
+  return (
+    <AuthButton name={name || 'Facebook'}
+      url={url || '/auth/facebook'}
+      popup={popup}
+      svg={svg}
+      alt={alt}
+      text={text}
+    />
+  );
+};
+```
+
+- `url` is like specifying the `href` on a link.
+- `popup`, if truthy, simply opens the `url` in a centered popup window.
+- `alt` is for alt text, the same as on other HTML elements.
+- `text` allows you to specify some text to the right of the image.
+- `svg` allows you to embed svg directly into the button.
+- `img` is supported in place of `svg`.  The `img` attribute should the the URL to an image.
+
+### Ready-to-use Buttons
+
+A bunch of pre-styled buttons are included.  They all extend the generic button.
 
 ```js
-var plugin = require("auth-component");
+import Amazon from 'auth-component/buttons/amazon/amazon';
+import Dropbox from 'auth-component/buttons/dropbox/dropbox';
+import Evernote from 'auth-component/buttons/evernote/evernote';
+import Facebook from 'auth-component/buttons/facebook/facebook';
+import Github from 'auth-component/buttons/github/github';
+import Google from 'auth-component/buttons/google/google';
+import LinkedIn from 'auth-component/buttons/linkedin/linkedin';
+import Microsoft from 'auth-component/buttons/microsoft/microsoft';
+import OpenID from 'auth-component/buttons/openid/openid';
+import PayPal from 'auth-component/buttons/paypal/paypal';
+import Skype from 'auth-component/buttons/skype/skype';
+import Slack from 'auth-component/buttons/slack/slack';
+import StackOverflow from 'auth-component/buttons/stackoverflow/stackoverflow';
+import Twitter from 'auth-component/buttons/twitter/twitter';
+import Yahoo from 'auth-component/buttons/yahoo/yahoo';
 ```
 
-## AMD use
+You'll generally only have to specify a `url` and the `popup` attribute:
 
-Configure the `can` and `jquery` paths and the `auth-component` package:
+```jsx
+import FacebookButton from 'auth-component/buttons/facebook/facebook';
 
-```html
-<script src="require.js"></script>
-<script>
-	require.config({
-	    paths: {
-	        "jquery": "node_modules/jquery/dist/jquery",
-	        "can": "node_modules/canjs/dist/amd/can"
-	    },
-	    packages: [{
-		    	name: 'auth-component',
-		    	location: 'node_modules/auth-component/dist/amd',
-		    	main: 'lib/auth-component'
-	    }]
-	});
-	require(["main-amd"], function(){});
-</script>
+<FacebookButton url='/auth/facebook' popup={true} />
 ```
 
-### Standalone use
+### Generic Button
 
-Load the `global` version of the plugin:
-
-```html
-<script src='./node_modules/auth-component/dist/global/auth-component.js'></script>
-```
 
 ## Contributing
 
