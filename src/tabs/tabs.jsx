@@ -1,8 +1,8 @@
 import React from 'react';
 
-export default ({tab, setTab}) => {
-  let signupActive = tab === 'signup' ? 'active' : '';
-  let loginActive = tab === 'login' ? 'active' : '';
+export default ({activeTab, setTab}) => {
+  let signupActive = activeTab === 'signup' ? 'active' : '';
+  let loginActive = activeTab === 'login' ? 'active' : '';
 
   return (
     <ul className='auth-component-tabs'>

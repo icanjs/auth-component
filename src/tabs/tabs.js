@@ -5,7 +5,7 @@ import route from 'can-route';
 import './tabs.less';
 
 export const ViewModel = DefineMap.extend({
-  tab: {
+  activeTab: {
     type: 'string',
     set (val) {
       if (this.routeAttr) {
@@ -19,9 +19,9 @@ export const ViewModel = DefineMap.extend({
 
   setTab (tab) {
     return function () {
-      this.tab = tab;
+      this.activeTab = tab;
     }.bind(this);
   }
 });
 
-import View fromexport default connect(ViewModel, View);
+export default connect(ViewModel, View);
