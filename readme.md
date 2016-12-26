@@ -8,15 +8,47 @@ There is also a matching CanJS Stache version: https://github.com/icanjs/can-aut
 
 ![auth-component example](https://cloud.githubusercontent.com/assets/128857/21478355/da76f80a-cb07-11e6-8a6d-dc382d30bf9f.jpg)
 
-## Usage
+## Example Usage
 
-```js
-import plugin from 'auth-component';
+`auth-component` is a collection of components.  They can be composed based on the auth requirements of your application.  The main demo shows how to build the example shown in the image above.  https://github.com/icanjs/auth-component/blob/master/src/auth-demo.js
+
+```jsx
+<AuthContainer>
+	<Tabs activeTab={route.data.page} routeAttr='page' />
+
+	<div className='auth-branding'>
+		<SVGInline svg={logo} />
+	</div>
+
+	<div className='oauth-buttons'>
+		<FacebookButton popup='true' />
+		<GitHubButton popup='true' />
+		<GoogleButton popup='true' />
+		<MicrosoftButton popup='true' />
+		<TwitterButton popup='true' />
+	</div>
+
+	<Route data={{page: 'login'}} component={LoginForm} />
+	<Route data={{page: 'signup'}} component={SignupForm} />
+</AuthContainer>
 ```
+
+## Forms
+
+A basic Login and Signup form are included.  There are two forms demos included.  Start an http-server in the root and open http://localhost:8080/src/forms/login-demo.html and http://localhost:8080/src/forms/signup-demo.html
+
+### Login/Signup using a can-connect Model
+See demo for now.
+
+### Login/Signup using a FeathersJS Service
+See demo for now.
+
+### Login/Signup using plain functions
+See demo for now.
 
 ## Buttons
 
-A Generic button and a bunch of ready-to-use buttons are included.
+A Generic button and a bunch of ready-to-use buttons are included.  There is a buttons demo included.  Start an http-server in the root, and check out http://localhost:8080/src/buttons/buttons-demo.html
 
 ### Generic Auth Button
 
