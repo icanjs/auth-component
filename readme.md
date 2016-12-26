@@ -10,7 +10,7 @@ There is also a matching CanJS Stache version: https://github.com/icanjs/can-aut
 
 ## Example Usage
 
-`auth-component` is a collection of components.  They can be composed based on the auth requirements of your application.  The main demo shows how to build the example shown in the image above.  https://github.com/icanjs/auth-component/blob/master/src/auth-demo.js
+`auth-component` is a collection of components.  They can be composed based on the auth requirements of your application.  The main demo shows how to build the example shown in the image above.  To run the demo, start an `http-server` in the root and open [http://localhost:8080](http://localhost:8080).  Here's the [demo code](https://github.com/icanjs/auth-component/blob/master/src/auth-demo.js).
 
 ```jsx
 <AuthContainer>
@@ -30,6 +30,18 @@ There is also a matching CanJS Stache version: https://github.com/icanjs/can-aut
 
 	<Route data={{page: 'login'}} component={LoginForm} />
 	<Route data={{page: 'signup'}} component={SignupForm} />
+</AuthContainer>
+```
+
+## AuthContainer
+
+The `<AuthContainer></AuthContainer>` component is a set a styles that center a white login container both vertically and horizontally inside its parent element.  It has no viewModel logic of its own, so all of the other components will work without it.
+
+```jsx
+import AuthContainer from 'auth-component/auth-container/auth-container';
+// In your template.
+<AuthContainer>
+	Put whatever markup you want inside here.
 </AuthContainer>
 ```
 
