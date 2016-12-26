@@ -47,20 +47,57 @@ import AuthContainer from 'auth-component/auth-container/auth-container';
 
 ## Forms
 
-A basic Login and Signup form are included.  There are two forms demos included.  Start an http-server in the root and open http://localhost:8080/src/forms/login-demo.html and http://localhost:8080/src/forms/signup-demo.html
+A basic Login and Signup form are included.
 
-### Login/Signup using a can-connect Model
-See demo for now.
+Here are four examples for using either the `<SignupForm>` or `<LoginForm>`:
 
-### Login/Signup using a FeathersJS Service
-See demo for now.
+```jsx
+import SignupForm from 'auth-component/forms/signup/signup';
 
-### Login/Signup using plain functions
-See demo for now.
+<h2>Signup - React Standalone</h2>
+<SignupForm handleSubmit={(authData) => Promise.resolve(authData)} />
+
+<h2>Signup - Feathers Service</h2>
+<SignupForm service={dummyService} onSuccess={handleSuccess} />
+
+<h2>Signup - Can-Connect Model</h2>
+<SignupForm Model={DummyModel}
+	onSuccess={handleSuccess}
+	usernameField='username'
+	usernamePlaceholder='username' />
+
+<h2>Signup - Error</h2>
+<SignupForm Model={DummyModel}
+	handleSubmit={() => Promise.reject('Invalid everything! No soup for you!')}
+	onSuccess={handleSuccess}
+	onError={error => { console.error(error); }} />
+```
+
+Many of the viewModel attributes are the same, so they share a [common base viewModel](https://github.com/icanjs/auth-component/blob/master/src/forms/form-base-vm.js).  The following attributes are available in both forms:
+
+- `usernameField` {String} Allows you to customize one of the attributes sent to the server. It's set to `"email"` by default.
+- `usernamePlaceholder` {String} Set the placeholder text for the `usernameField`.  Default is `"e-mail address"`.
+- `passwordField` {String} Allows you to customize an attribute sent to the server.  The default is `"password"`.
+- `passwordPlaceholder` {String} Set the placeholder text for the `passwordField`.  Default is `"password"`.
+- `Model` {can-connect Model} a can-connect compatible Model to use for submitting the form data.
+- `service` {FeathersJS service} a Feathers service to use for submitting the form data.
+- `suppressWarnings` {Boolean} There are a few warnings that will show up by default. Turn them off by setting `suppressWarnings` to true.  Default `false`.
+- `handleSubmit` {Function} is called when the form is submitted.  If a `Model` or `service` was provided, it will be used to communicate with the server.  If not, `handleSubmit` must be overwritten with your own logic.  It must return a `Promise`.
+- `onSuccess` {Function} a function that runs when the server returns a success response.
+- `onError` {Function} a function that runs when the server returns an error response.
+
+These are the custom attributes for the `<LoginForm>` form:
+- `buttonText` {String} Set the main action button's label.  Default is `"Login"`.
+- `onForgot` {Function} runs when the user clicks the "Forgot Password" link. There is no default handler for this, so you have to provide your own function.
+
+These are the custom attributes for the `<SignupForm>` form:
+- `buttonText` {String} Set the main action button's label.  Default is `"Sign up"`.
+
+There are two form demos included.  Start an http-server in the root and open [http://localhost:8080/src/forms/login-demo.html](http://localhost:8080/src/forms/login-demo.html) and [http://localhost:8080/src/forms/signup-demo.html](http://localhost:8080/src/forms/signup-demo.html).  Both demos include examples for using a `Model`, `service`, or custom function.
 
 ## Buttons
 
-A Generic button and a bunch of ready-to-use buttons are included.  There is a buttons demo included.  Start an http-server in the root, and check out http://localhost:8080/src/buttons/buttons-demo.html
+A Generic button and a bunch of ready-to-use buttons are included.  There is a buttons demo included.  Start an http-server in the root, and check out [http://localhost:8080/src/buttons/buttons-demo.html](http://localhost:8080/src/buttons/buttons-demo.html).
 
 ### Generic Auth Button
 
@@ -84,7 +121,7 @@ export default ({name, url, img, alt, text, popup}) => {
 };
 ```
 
-- `url` is like specifying the `href` on a link.
+- `url` is like specifying the `href` on a link. The default value matches FeathersJS default OAuth URLs like `/auth/<providerName>`.  For example, the Facebook button uses `auth/facebook`.
 - `popup`, if truthy, simply opens the `url` in a centered popup window.
 - `alt` is for alt text, the same as on other HTML elements.
 - `text` allows you to specify some text to the right of the image.
