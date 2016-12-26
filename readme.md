@@ -121,7 +121,7 @@ export default ({name, url, img, alt, text, popup}) => {
 };
 ```
 
-- `url` is like specifying the `href` on a link. The default value matches FeathersJS default OAuth URLs like `/auth/<providerName>`.  For example, the Facebook button uses `auth/facebook`.
+- `url` is like specifying the `href` on a link. The default value matches FeathersJS default OAuth URLs like `/auth/<providerName>`.  For example, the Facebook button uses `/auth/facebook`.
 - `popup`, if truthy, simply opens the `url` in a centered popup window.
 - `alt` is for alt text, the same as on other HTML elements.
 - `text` allows you to specify some text to the right of the image.
