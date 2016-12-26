@@ -1241,7 +1241,21 @@ can-observation@^3.0.1, can-observation@^3.0.3, can-observation@^3.0.4:
     can-types "^1.0.1"
     can-util "^3.1.1"
 
-can-route@^3.0.5:
+can-route-react@^0.1.2:
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/can-route-react/-/can-route-react-0.1.2.tgz#f500486a2b6a0deaf00c7e9ad60eda208d9607ef"
+  dependencies:
+    can-component "^3.0.4"
+    can-define "^1.0.8"
+    is-subset "^0.1.1"
+    lodash.isempty "^4.4.0"
+    lodash.some "^4.6.0"
+    react "^15.4.1"
+    react-dom "^15.4.1"
+    react-view-models "^0.0.7"
+    steal-react-jsx "^0.0.3"
+
+can-route@^3.0.5, can-route@^3.0.6:
   version "3.0.6"
   resolved "https://registry.yarnpkg.com/can-route/-/can-route-3.0.6.tgz#98be667eeabcd6497f7163bd9593a61d6feab5ac"
   dependencies:
@@ -1284,7 +1298,7 @@ can-stache-bindings@^3.0.5:
     can-view-model "^3.0.0"
     can-view-scope "^3.0.0"
 
-can-stache@^3.0.1, can-stache@^3.0.13:
+can-stache@^3.0.13:
   version "3.0.16"
   resolved "https://registry.yarnpkg.com/can-stache/-/can-stache-3.0.16.tgz#a59fc8d49e62b63469f9d0b837c31f099773707d"
   dependencies:
@@ -1331,17 +1345,6 @@ can-view-callbacks@^3.0.0, can-view-callbacks@^3.0.2, can-view-callbacks@^3.0.3:
     can-observation "^3.0.1"
     can-util "^3.0.1"
 
-can-view-import@^3.0.3:
-  version "3.0.3"
-  resolved "https://registry.yarnpkg.com/can-view-import/-/can-view-import-3.0.3.tgz#aa2df5d8cb69d3896573e2d9842cc196c02e6ae7"
-  dependencies:
-    can-event "^3.0.1"
-    can-stache "^3.0.1"
-    can-util "^3.0.1"
-    can-view-callbacks "^3.0.0"
-    can-view-nodelist "^3.0.0"
-    steal-stache "^3.0.0"
-
 can-view-live@^3.0.0, can-view-live@^3.0.4:
   version "3.0.5"
   resolved "https://registry.yarnpkg.com/can-view-live/-/can-view-live-3.0.5.tgz#6ddbc9a2d2debd53762c16d20d6868d4cc8f6232"
@@ -1364,7 +1367,7 @@ can-view-model@^3.0.0, can-view-model@^3.1.2:
     can-types "^1.0.1"
     can-util "^3.1.1"
 
-can-view-nodelist@^3.0.0, can-view-nodelist@^3.0.1, can-view-nodelist@^3.0.2:
+can-view-nodelist@^3.0.1, can-view-nodelist@^3.0.2:
   version "3.0.4"
   resolved "https://registry.yarnpkg.com/can-view-nodelist/-/can-view-nodelist-3.0.4.tgz#d283a689d90ef332a1ed255bf394350c481dad8a"
   dependencies:
@@ -3044,6 +3047,10 @@ is-stream@^1.0.1:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/is-stream/-/is-stream-1.1.0.tgz#12d4a3dd4e68e0b79ceb8dbc84173ae80d91ca44"
 
+is-subset@^0.1.1:
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/is-subset/-/is-subset-0.1.1.tgz#8a59117d932de1de00f245fcdd39ce43f1e939a6"
+
 is-typedarray@^1.0.0, is-typedarray@~1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/is-typedarray/-/is-typedarray-1.0.0.tgz#e479c80858df0c1b11ddda6940f96011fcda4a9a"
@@ -3105,10 +3112,6 @@ jodid25519@^1.0.0:
   resolved "https://registry.yarnpkg.com/jodid25519/-/jodid25519-1.0.2.tgz#06d4912255093419477d425633606e0e90782967"
   dependencies:
     jsbn "~0.1.0"
-
-"jquery@2.x - 3.x":
-  version "3.1.1"
-  resolved "https://registry.yarnpkg.com/jquery/-/jquery-3.1.1.tgz#347c1c21c7e004115e0a4da32cece041fad3c8a3"
 
 js-module-formats@~0.1.2:
   version "0.1.2"
@@ -3316,6 +3319,10 @@ lodash.isarray@^3.0.0:
   version "3.0.4"
   resolved "https://registry.yarnpkg.com/lodash.isarray/-/lodash.isarray-3.0.4.tgz#79e4eb88c36a8122af86f844aa9bcd851b5fbb55"
 
+lodash.isempty@^4.4.0:
+  version "4.4.0"
+  resolved "https://registry.yarnpkg.com/lodash.isempty/-/lodash.isempty-4.4.0.tgz#6f86cbedd8be4ec987be9aaf33c9684db1b31e7e"
+
 lodash.keys@^3.0.0:
   version "3.1.2"
   resolved "https://registry.yarnpkg.com/lodash.keys/-/lodash.keys-3.1.2.tgz#4dbc0472b156be50a0b286855d1bd0b0c656098a"
@@ -3327,6 +3334,10 @@ lodash.keys@^3.0.0:
 lodash.omit@^4.3.0:
   version "4.5.0"
   resolved "https://registry.yarnpkg.com/lodash.omit/-/lodash.omit-4.5.0.tgz#6eb19ae5a1ee1dd9df0b969e66ce0b7fa30b5e60"
+
+lodash.some@^4.6.0:
+  version "4.6.0"
+  resolved "https://registry.yarnpkg.com/lodash.some/-/lodash.some-4.6.0.tgz#1bb9f314ef6b8baded13b549169b2a945eb68e4d"
 
 lodash.uniq@^4.5.0:
   version "4.5.0"
@@ -4604,15 +4615,6 @@ steal-qunit@^1.0.0:
 steal-react-jsx@^0.0.3:
   version "0.0.3"
   resolved "https://registry.yarnpkg.com/steal-react-jsx/-/steal-react-jsx-0.0.3.tgz#c0f0b3847f3be236f236e8bd842e869789a88752"
-
-steal-stache@^3.0.0, steal-stache@^3.0.4:
-  version "3.0.4"
-  resolved "https://registry.yarnpkg.com/steal-stache/-/steal-stache-3.0.4.tgz#0e84fc8ddedf9a9f5d55203bd3d6b16c8547c040"
-  dependencies:
-    can-stache "^3.0.13"
-    can-stache-bindings "^3.0.5"
-    can-view-import "^3.0.3"
-    jquery "2.x - 3.x"
 
 steal-svg@^0.0.3:
   version "0.0.3"
