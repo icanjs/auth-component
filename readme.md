@@ -6,7 +6,7 @@ Compose a clean Auth UI with these simple React components.
 
 There is also a matching CanJS Stache version: https://github.com/icanjs/can-auth-component
 
-![auth-component UI](auth-component.jpg)
+![auth-component example](https://cloud.githubusercontent.com/assets/128857/21478355/da76f80a-cb07-11e6-8a6d-dc382d30bf9f.jpg)
 
 ## Usage
 
@@ -77,8 +77,7 @@ import FacebookButton from 'auth-component/buttons/facebook/facebook';
 <FacebookButton url='/auth/facebook' popup={true} />
 ```
 
-### Generic Button
-
+![AuthComponent Buttons Demo](https://cloud.githubusercontent.com/assets/128857/21478359/df7977a6-cb07-11e6-9151-5a2e7c119499.jpg)
 
 ## Contributing
 
