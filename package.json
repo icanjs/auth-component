@@ -1,7 +1,7 @@
 {
   "name": "auth-component",
-  "version": "3.2.1",
-  "description": "Authentication components for DoneJS & React",
+  "version": "4.0.0",
+  "description": "Clean authentication components for React",
   "homepage": "https://github.com/icanjs/auth-component",
   "repository": {
     "type": "git",
