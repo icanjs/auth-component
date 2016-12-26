@@ -47,12 +47,12 @@ import AuthContainer from 'auth-component/auth-container/auth-container';
 
 ## Forms
 
-A basic Login and Signup form are included.
-
-Here are four examples for using either the `<SignupForm>` or `<LoginForm>`:
+A basic Login and Signup form are included. Here are four examples for using either the `<SignupForm>` or `<LoginForm>`:
 
 ```jsx
 import SignupForm from 'auth-component/forms/signup/signup';
+// You can use LoginForm in any of the below examples.
+import LoginForm from 'auth-component/forms/login/login';
 
 <h2>Signup - React Standalone</h2>
 <SignupForm handleSubmit={(authData) => Promise.resolve(authData)} />
