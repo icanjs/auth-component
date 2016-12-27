@@ -150,13 +150,15 @@ import Twitter from 'auth-component/buttons/twitter/twitter';
 import Yahoo from 'auth-component/buttons/yahoo/yahoo';
 ```
 
-You'll generally only have to specify a `url` and the `popup` attribute:
+You'll generally only ever have to specify the `url`, `text`, and `popup` attributes.
 
 ```jsx
 import FacebookButton from 'auth-component/buttons/facebook/facebook';
 
-<FacebookButton url='/auth/facebook' popup={true} />
+<FacebookButton url='/auth/facebook' popup={true} text='Login with Facebook' />
 ```
+
+If you don't specify a `text` attribute, you'll get a square button with an icon.  The button with `text` from the above code would look like the "Login with Facebook" button in this example:
 
 ![AuthComponent Buttons Demo](https://cloud.githubusercontent.com/assets/128857/21478412/70751af8-cb08-11e6-8305-807c6fd0777b.jpg)
 
