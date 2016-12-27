@@ -160,6 +160,46 @@ import FacebookButton from 'auth-component/buttons/facebook/facebook';
 
 ![AuthComponent Buttons Demo](https://cloud.githubusercontent.com/assets/128857/21478412/70751af8-cb08-11e6-8305-807c6fd0777b.jpg)
 
+## Tabs
+
+Currently, the only set of tabs uses [can-route](https://github.com/canjs/can-route) to change tabs.  If the feature is needed, [this issue for creating a standalone set of tabs](https://github.com/icanjs/auth-component/issues/18) is open and could use a champion.
+
+The main demo shows how to use can-route based tabs together. You first need a basic can-route setup, shown in the below example. Then you can use the `<Route />` component from [can-route-react](https://github.com/icanjs/can-route-react) to show and hide components.
+
+```jsx
+import React from 'react';
+import ReactDOM from 'react-dom';
+import route from 'can-route';
+import DefineMap from 'can-define/map/map';
+import {Route} from 'can-route-react';
+
+import AuthContainer from './auth-container/auth-container';
+import Tabs from 'auth-component/tabs/can-route';
+import SignupForm from 'auth-component/forms/signup/';
+import LoginForm from 'auth-component/forms/login/';
+
+const RouteMap = DefineMap.extend({
+  page: {
+    type: 'string'
+  }
+});
+route.data = new RouteMap({});
+
+// Create a '/page' route.
+route('{page}', {page: 'login'});
+route.ready();
+
+ReactDOM.render(
+  <AuthContainer>
+    <Tabs activeTab={route.data.page} routeAttr='page' />
+
+    <Route data={{page: 'login'}} component={LoginForm} />
+    <Route data={{page: 'signup'}} component={SignupForm} />
+  </AuthContainer>,
+  document.querySelector('[root=true]')
+);
+```
+
 ## Contributing
 
 ### Making a Build
