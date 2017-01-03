@@ -1,6 +1,6 @@
 {
   "name": "auth-component",
-  "version": "4.0.1",
+  "version": "4.0.2",
   "description": "Clean authentication components for React",
   "homepage": "https://github.com/icanjs/auth-component",
   "repository": {
