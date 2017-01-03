@@ -3932,11 +3932,11 @@ q@^1.0.1, q@^1.4.1:
   version "1.4.1"
   resolved "https://registry.yarnpkg.com/q/-/q-1.4.1.tgz#55705bcd93c5f3673530c2c2cbc0c2b3addc286e"
 
-qs@6.2.0, qs@^6.0.1:
+qs@6.2.0, qs@^6.0.1, qs@^6.0.2:
   version "6.2.0"
   resolved "https://registry.yarnpkg.com/qs/-/qs-6.2.0.tgz#3b7848c03c2dece69a9522b0fae8c4126d745f3b"
 
-qs@^6.0.2, qs@^6.1.0, qs@^6.2.1, qs@~6.3.0:
+qs@^6.1.0, qs@^6.2.1, qs@~6.3.0:
   version "6.3.0"
   resolved "https://registry.yarnpkg.com/qs/-/qs-6.3.0.tgz#f403b264f23bc01228c74131b407f18d5ea5d442"
 
@@ -4616,9 +4616,9 @@ steal-react-jsx@^0.0.3:
   version "0.0.3"
   resolved "https://registry.yarnpkg.com/steal-react-jsx/-/steal-react-jsx-0.0.3.tgz#c0f0b3847f3be236f236e8bd842e869789a88752"
 
-steal-svg@^0.0.3:
-  version "0.0.3"
-  resolved "https://registry.yarnpkg.com/steal-svg/-/steal-svg-0.0.3.tgz#976f55f6dfc4cb8174d0bec2029170b9b34c01a0"
+steal-svg@^0.0.5:
+  version "0.0.5"
+  resolved "https://registry.yarnpkg.com/steal-svg/-/steal-svg-0.0.5.tgz#021c3c0044e593f86cbb4619aa4828a306a06772"
 
 steal-systemjs@0.18.5:
   version "0.18.5"

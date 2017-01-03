@@ -55,23 +55,15 @@
     ],
     "directories": {
       "lib": "src"
-    },
-    "ext": {
-      "svg": "steal-svg"
     }
   },
   "dependencies": {
-    "can-component": "^3.0.4",
     "can-define": "^1.0.8",
     "feathers-authentication-popups": "^0.1.2",
     "react": "^15.4.1",
     "react-dom": "^15.4.1",
     "react-svg-inline": "^1.2.0",
-    "react-view-models": "^0.0.7",
-    "steal-css": "^1.0.0",
-    "steal-less": "^1.0.1",
-    "steal-react-jsx": "^0.0.3",
-    "steal-svg": "^0.0.3"
+    "react-view-models": "^0.0.7"
   },
   "devDependencies": {
     "can-route": "^3.0.6",
@@ -82,6 +74,10 @@
     "steal": "^1.0.4",
     "steal-qunit": "^1.0.0",
     "steal-tools": "^1.0.1",
+    "steal-css": "^1.0.0",
+    "steal-less": "^1.0.1",
+    "steal-react-jsx": "^0.0.3",
+    "steal-svg": "^0.0.5",
     "testee": "^0.3.0"
   }
 }
