@@ -68,12 +68,14 @@ export default DefineMap.extend({
 
   /**
    * `Model` is a can-connect compatible Model. Passing a model will create a 
+  /**
+   * `Model` is a can-connect compatible Model. Passing a model will create a
    * new model instance and save it to the server.
    */
   Model: 'any',
 
   /**
-   * There are a few warnings that will show up by default. They can be turned 
+   * There are a few warnings that will show up by default. They can be turned
    * off by setting `suppressWarnings` to true.
    */
   suppressWarnings: false,
