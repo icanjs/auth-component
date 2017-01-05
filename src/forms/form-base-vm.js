@@ -107,9 +107,17 @@ export default DefineMap.extend({
     if (this.strategy) {
       authData.strategy = this.strategy;
     }
+    authData = this.prepareData(authData);
     this.handleSubmit(authData)
       .then(response => this.onSuccess(response))
       .catch(error => this.uiError(error));
+  },
+
+  /**
+   * `prepareData` allows access to the data before it's sent to the server.
+   */
+  prepareData (data) {
+    return data;
   },
 
   /**
