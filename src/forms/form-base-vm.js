@@ -67,7 +67,11 @@ export default DefineMap.extend({
   },
 
   /**
-   * `Model` is a can-connect compatible Model. Passing a model will create a 
+   * If a strategy attribute is provided, it will be added to the request data.
+   * This is to make it easy to integrate with feathers-authentication.
+   */
+  strategy: 'string',
+
   /**
    * `Model` is a can-connect compatible Model. Passing a model will create a
    * new model instance and save it to the server.
@@ -100,6 +104,9 @@ export default DefineMap.extend({
       [this.usernameField]: this.username,
       [this.passwordField]: this.password
     };
+    if (this.strategy) {
+      authData.strategy = this.strategy;
+    }
     this.handleSubmit(authData)
       .then(response => this.onSuccess(response))
       .catch(error => this.uiError(error));
