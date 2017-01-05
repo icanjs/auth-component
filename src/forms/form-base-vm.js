@@ -2,6 +2,10 @@ import DefineMap from 'can-define/map/';
 import {devWarning} from 'auth-component/utils';
 
 export default DefineMap.extend({
+  '*': {
+    serialize: true
+  },
+
   /**
    * `usernameField` allows you to change "email" to something else in
    * outgoing data.
