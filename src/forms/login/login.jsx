@@ -1,4 +1,5 @@
 import React from 'react';
+import Input from '../input/input';
 
 export default ({
   usernameField,
@@ -16,17 +17,15 @@ export default ({
     <form className='auth-component-form' onSubmit={submitClicked}>
       <div className='messages' />
 
-      <input className='auth-component-input'
-        type={usernameField === 'email' ? 'email' : 'text'}
+      <Input type={usernameField === 'email' ? 'email' : 'text'}
         placeholder={usernamePlaceholder}
         value={username}
         required
         tabIndex='1'
         onChange={usernameChanged} />
 
-      <input className='auth-component-input'
-        type='password'
-        placeholder='password'
+      <Input type='password'
+        placeholder={passwordPlaceholder}
         value={password}
         required
         tabIndex='1'
