@@ -79,6 +79,7 @@ Many of the viewModel attributes are the same, so they share a [common base view
 - `usernamePlaceholder` {String} Set the placeholder text for the `usernameField`.  Default is `"e-mail address"`.
 - `passwordField` {String} Allows you to customize an attribute sent to the server.  The default is `"password"`.
 - `passwordPlaceholder` {String} Set the placeholder text for the `passwordField`.  Default is `"password"`.
+- `strategy` {String} When using [feathers-authentication](https://github.com/feathersjs/feathers-authentication), setting this attribute will add a `strategy` attribute to the outgoing data.
 - `Model` {can-connect Model} a can-connect compatible Model to use for submitting the form data.
 - `service` {FeathersJS service} a Feathers service to use for submitting the form data.
 - `suppressWarnings` {Boolean} There are a few warnings that will show up by default. Turn them off by setting `suppressWarnings` to true.  Default `false`.
