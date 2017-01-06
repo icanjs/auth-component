@@ -34,7 +34,7 @@
     "donejs",
     "authentication"
   ],
-  "system": {
+  "steal": {
     "main": "auth-component",
     "configDependencies": [
       "live-reload"
