@@ -69,7 +69,6 @@
     "assert": "^1.4.1",
     "can-route": "^3.0.6",
     "can-route-react": "^0.1.2",
-    "can-view-autorender": "^3.0.3",
     "done-serve": "^0.2.0",
     "semistandard": "^9.1.0",
     "steal": "^1.0.4",
