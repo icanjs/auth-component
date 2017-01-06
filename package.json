@@ -66,18 +66,19 @@
     "react-view-models": "^0.0.7"
   },
   "devDependencies": {
+    "assert": "^1.4.1",
     "can-route": "^3.0.6",
     "can-route-react": "^0.1.2",
     "can-view-autorender": "^3.0.3",
     "done-serve": "^0.2.0",
     "semistandard": "^9.1.0",
     "steal": "^1.0.4",
-    "steal-qunit": "^1.0.0",
-    "steal-tools": "^1.0.1",
     "steal-css": "^1.0.0",
     "steal-less": "^1.0.1",
+    "steal-mocha": "^1.0.0",
     "steal-react-jsx": "^0.0.3",
     "steal-svg": "^0.0.5",
+    "steal-tools": "^1.0.1",
     "testee": "^0.3.0"
   }
 }
