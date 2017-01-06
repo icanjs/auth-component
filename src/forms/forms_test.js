@@ -86,11 +86,13 @@ describe('Forms Base ViewModel', function () {
       assert(vm.username === 'marshall');
     });
 
-    it('calls the onUsernameChange callback', function () {
+    it('calls the onUsernameChange callback', function (done) {
       let user = 'marshallswain';
       const vm = new FormVM({
         onUsernameChange (username) {
           assert.ok(username === user);
+          done();
+          return Promise.resolve(username);
         }
       });
       vm.usernameChanged({
@@ -112,11 +114,13 @@ describe('Forms Base ViewModel', function () {
       assert(vm.password === 'so-secret');
     });
 
-    it('calls the onPasswordChange callback', function () {
+    it('calls the onPasswordChange callback', function (done) {
       let password = 'abcdefg';
       const vm = new FormVM({
         onUsernameChange (pw) {
           assert.ok(pw === password);
+          done();
+          return Promise.resolve(pw);
         }
       });
       vm.usernameChanged({
