@@ -82,7 +82,9 @@ export default DefineMap.extend({
    * There are a few warnings that will show up by default. They can be turned
    * off by setting `suppressWarnings` to true.
    */
-  suppressWarnings: false,
+  suppressWarnings: {
+    value: false
+  },
 
   /**
    * If warnings haven't been suppressed, `warn` uses the `devWarning` utility
