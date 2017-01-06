@@ -1,2 +1,1 @@
-import '../src/auth-component_test';
-import '../src/auth/auth_test';
+import '~/forms/forms_test';
