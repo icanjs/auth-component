@@ -29,7 +29,7 @@
   "main": "src/auth-component",
   "keywords": [
     "canjs",
-    "can",
+    "react",
     "component",
     "donejs",
     "authentication"
