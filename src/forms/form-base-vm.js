@@ -93,6 +93,7 @@ export default DefineMap.extend({
   warn (message) {
     if (this.suppressWarnings !== true) {
       devWarning(message);
+      return message;
     }
   },
 
