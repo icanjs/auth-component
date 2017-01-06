@@ -124,13 +124,13 @@ export default DefineMap.extend({
    * The default `handleSubmit` function uses the Model or service to submit
    * data to the server. This function can be overwritten.
    */
-  handleSubmit (authData) {
+  handleSubmit (data) {
     // If a can-connect Model was provided
     if (this.Model) {
-      return new this.Model(authData).save();
+      return new this.Model(data).save();
     // If a Feathers service was provided.
     } else if (this.service) {
-      return this.service.create(authData);
+      return this.service.create(data);
     // A handleSubmit function has to be provided.
     } else {
       return Promise.reject(new Error(`${this.formName}: You must provide a Model or service attribute, or overwrite the handleSubmit function.`));
