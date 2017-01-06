@@ -1,0 +1,11 @@
+/*auth-component@4.0.2#buttons/microsoft/microsoft.less!steal-less@1.0.1#less*/
+.oauth-microsoft {
+  background: #2672EC;
+  /* This shouldn't know about its implementation.  Move this somewhere else. */
+}
+.oauth-microsoft > * {
+  color: white;
+}
+.oauth-microsoft.one {
+  width: 153px;
+}
