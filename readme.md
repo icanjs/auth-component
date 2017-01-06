@@ -83,6 +83,8 @@ Many of the viewModel attributes are the same, so they share a [common base view
 - `Model` {can-connect Model} a can-connect compatible Model to use for submitting the form data.
 - `service` {FeathersJS service} a Feathers service to use for submitting the form data.
 - `suppressWarnings` {Boolean} There are a few warnings that will show up by default. Turn them off by setting `suppressWarnings` to true.  Default `false`.
+- `onUsernameChange(username)` {Function} A hook for performing actions when the username value changes.
+- `onPasswordChange(password)` {Function} A hook for performing actions when the password value changes.
 - `processData(data)` {Function} A hook that lets you optionally perform some processing on the data before it gets passed to `handleSubmit`.
 - `handleSubmit(data)` {Function} is called with the form data when the form is submitted.  If a `Model` or `service` was provided, it will be used to communicate with the server.  If not, `handleSubmit` must be overwritten with your own logic.  It must return a `Promise`.
 - `onSuccess(responseData)` {Function} is called with the server response data.

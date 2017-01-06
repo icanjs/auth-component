@@ -30,7 +30,9 @@ describe('Forms Base ViewModel', function () {
       const vm = new FormVM({});
       const functions = [
         'usernameChanged',
+        'onUsernameChange',
         'passwordChanged',
+        'onPasswordChange',
         'warn',
         'submitClicked',
         'prepareData',
@@ -83,6 +85,20 @@ describe('Forms Base ViewModel', function () {
       });
       assert(vm.username === 'marshall');
     });
+
+    it('calls the onUsernameChange callback', function () {
+      let user = 'marshallswain';
+      const vm = new FormVM({
+        onUsernameChange (username) {
+          assert.ok(username === user);
+        }
+      });
+      vm.usernameChanged({
+        target: {
+          value: user
+        }
+      });
+    });
   });
 
   describe('passwordChanged handler', function () {
@@ -94,6 +110,20 @@ describe('Forms Base ViewModel', function () {
         }
       });
       assert(vm.password === 'so-secret');
+    });
+
+    it('calls the onPasswordChange callback', function () {
+      let password = 'abcdefg';
+      const vm = new FormVM({
+        onUsernameChange (pw) {
+          assert.ok(pw === password);
+        }
+      });
+      vm.usernameChanged({
+        target: {
+          value: password
+        }
+      });
     });
   });
 

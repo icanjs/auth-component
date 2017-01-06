@@ -34,7 +34,13 @@ export default DefineMap.extend({
    */
   usernameChanged (event) {
     this.username = event.target.value;
+    this.onUsernameChange(event.target.value);
   },
+  /**
+   * The `onUsernameChange` callback gets called right after the username
+   * is updated. It can be used to check if a username is available.
+   */
+  onUsernameChange (username) {},
 
   /**
    * `passwordField` allows you to change "password" to something else in
@@ -64,7 +70,13 @@ export default DefineMap.extend({
    */
   passwordChanged (event) {
     this.password = event.target.value;
+    this.onPasswordChange(event.target.value)
   },
+  /**
+   * The `onPasswordChange` callback gets called right after the password
+   * is updated. It can be used to check if a password is valid.
+   */
+  onPasswordChange (password) {},
 
   /**
    * If a strategy attribute is provided, it will be added to the request data.
