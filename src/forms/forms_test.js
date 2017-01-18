@@ -75,78 +75,78 @@ describe('Forms Base ViewModel', function () {
     });
   });
 
-  describe('usernameChanged handler', function () {
-    it('properly sets the username', function () {
-      const vm = new FormVM({});
-      vm.usernameChanged({
-        target: {
-          value: 'marshall'
-        }
-      });
-      assert(vm.username === 'marshall');
-    });
+  // describe('usernameChanged handler', function () {
+  //   it('properly sets the username', function () {
+  //     const vm = new FormVM({});
+  //     vm.usernameChanged({
+  //       target: {
+  //         value: 'marshall'
+  //       }
+  //     });
+  //     assert(vm.username === 'marshall');
+  //   });
 
-    it('calls the onUsernameChange callback', function (done) {
-      let user = 'marshallswain';
-      const vm = new FormVM({
-        onUsernameChange (username) {
-          assert.ok(username === user);
-          done();
-          return Promise.resolve(username);
-        }
-      });
-      vm.usernameChanged({
-        target: {
-          value: user
-        }
-      });
-    });
-  });
+  //   it('calls the onUsernameChange callback', function (done) {
+  //     let user = 'marshallswain';
+  //     const vm = new FormVM({
+  //       onUsernameChange (username) {
+  //         assert.ok(username === user);
+  //         done();
+  //         return Promise.resolve(username);
+  //       }
+  //     });
+  //     vm.usernameChanged({
+  //       target: {
+  //         value: user
+  //       }
+  //     });
+  //   });
+  // });
 
-  describe('passwordChanged handler', function () {
-    it('properly sets the password', function () {
-      const vm = new FormVM({});
-      vm.passwordChanged({
-        target: {
-          value: 'so-secret'
-        }
-      });
-      assert(vm.password === 'so-secret');
-    });
+  // describe('passwordChanged handler', function () {
+  //   it('properly sets the password', function () {
+  //     const vm = new FormVM({});
+  //     vm.passwordChanged({
+  //       target: {
+  //         value: 'so-secret'
+  //       }
+  //     });
+  //     assert(vm.password === 'so-secret');
+  //   });
 
-    it('calls the onPasswordChange callback', function (done) {
-      let password = 'abcdefg';
-      const vm = new FormVM({
-        onUsernameChange (pw) {
-          assert.ok(pw === password);
-          done();
-          return Promise.resolve(pw);
-        }
-      });
-      vm.usernameChanged({
-        target: {
-          value: password
-        }
-      });
-    });
-  });
+  //   it('calls the onPasswordChange callback', function (done) {
+  //     let password = 'abcdefg';
+  //     const vm = new FormVM({
+  //       onUsernameChange (pw) {
+  //         assert.ok(pw === password);
+  //         done();
+  //         return Promise.resolve(pw);
+  //       }
+  //     });
+  //     vm.usernameChanged({
+  //       target: {
+  //         value: password
+  //       }
+  //     });
+  //   });
+  // });
 
-  describe('console warnings', function () {
-    it('have a suppressWarnings property', function () {
-      const vm = new FormVM({
-        suppressWarnings: true
-      });
-      assert(vm.suppressWarnings);
-    });
+  // describe('console warnings', function () {
+  //   it('have a suppressWarnings property', function () {
+  //     const vm = new FormVM({
+  //       suppressWarnings: true
+  //     });
+  //     assert(vm.suppressWarnings);
+  //   });
 
-    it('are suppressed by suppressWarnings', function () {
-      const vm = new FormVM({});
-      assert(vm.warn('test') === 'test');
+  //   it('are suppressed by suppressWarnings', function () {
+  //     const vm = new FormVM({});
+  //     assert(vm.warn('test') === 'test');
 
-      vm.suppressWarnings = true;
-      assert(vm.warn('test') === undefined);
-    });
-  });
+  //     vm.suppressWarnings = true;
+  //     assert(vm.warn('test') === undefined);
+  //   });
+  // });
 
   describe('submitClicked handler', function () {
     it('calls the handleSubmit function with data', function () {

@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import SignupForm from './signup';
+import LoginForm from './local-login';
 import DefineMap from 'can-define/map/map';
 
 const dummyService = {
@@ -23,33 +23,46 @@ function handleSuccess (loginData) {
   console.log('Login was successful!', loginData);
 }
 
+function simulatedAsyncValidation (query) {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      if (query.email === 'marshall@creativeideal.net') {
+        reject('That email is unavailable');
+      } else {
+        resolve(true);
+      }
+    }, 500);
+  });
+}
+
 // Render the DOM
 ReactDOM.render(
   <div>
     <div className='container standalone'>
-      <h2>Signup - React Standalone</h2>
-      <SignupForm handleSubmit={(authData) => {
-        return Promise.resolve(authData);
+      <h2>Login - React Standalone</h2>
+      <LoginForm handleLogin={authData => {
+        console.log(authData);
       }} />
     </div>
 
     <div className='container service'>
-      <h2>Signup - Feathers Service</h2>
-      <SignupForm service={dummyService} onSuccess={handleSuccess} />
+      <h2>Login - Feathers Service</h2>
+      <LoginForm service={dummyService} onSuccess={handleSuccess} />
     </div>
 
     <div className='container model'>
-      <h2>Signup - Can-Connect Model</h2>
-      <SignupForm Model={DummyModel}
+      <h2>Login - Can-Connect Model</h2>
+      <LoginForm Model={DummyModel}
         onSuccess={handleSuccess}
         usernameField='username'
-        usernamePlaceholder='username' />
+        usernamePlaceholder='username'
+        usernameAsyncValidation={simulatedAsyncValidation} />
     </div>
 
     <div className='container error'>
-      <h2>Signup - Error</h2>
-      <SignupForm Model={DummyModel}
-        handleSubmit={() => Promise.reject('Invalid everything! No soup for you!')}
+      <h2>Login - Error</h2>
+      <LoginForm Model={DummyModel}
+        onSubmit={() => Promise.reject('Invalid everything! No soup for you!')}
         onSuccess={handleSuccess}
         onError={error => { console.error(error); }} />
     </div>
