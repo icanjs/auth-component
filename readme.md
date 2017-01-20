@@ -45,35 +45,18 @@ import AuthContainer from 'auth-component/auth-container/auth-container';
 </AuthContainer>
 ```
 
-## Forms
+## LocalSignupForm and LocalLoginForm
 
-A basic Login and Signup form are included. Here are four examples for using either the `<SignupForm>` or `<LoginForm>`:
+A basic Local (username & password) Login and Signup form are included.
 
 ```jsx
-import SignupForm from 'auth-component/forms/signup/signup';
-// You can use LoginForm in any of the below examples.
-import LoginForm from 'auth-component/forms/login/login';
-
-<h2>Signup - React Standalone</h2>
-<SignupForm handleSubmit={(authData) => Promise.resolve(authData)} />
-
-<h2>Signup - Feathers Service</h2>
-<SignupForm service={dummyService} onSuccess={handleSuccess} />
-
-<h2>Signup - Can-Connect Model</h2>
-<SignupForm Model={DummyModel}
-	onSuccess={handleSuccess}
-	usernameField='username'
-	usernamePlaceholder='username' />
-
-<h2>Signup - Error</h2>
-<SignupForm Model={DummyModel}
-	handleSubmit={() => Promise.reject('Invalid everything! No soup for you!')}
-	onSuccess={handleSuccess}
-	onError={error => { console.error(error); }} />
+import SignupForm from 'auth-component/forms/local-signup/local-signup';
+import LoginForm from 'auth-component/forms/local-login/local-login';
 ```
 
-Many of the viewModel attributes are the same, so they share a [common base viewModel](https://github.com/icanjs/auth-component/blob/master/src/forms/form-base-vm.js).  The following attributes are available in both forms:
+Check out the [local-login demo](https://github.com/icanjs/auth-component/blob/master/src/forms/local-login/local-login.js) and [local-signup demo](https://github.com/icanjs/auth-component/blob/master/src/forms/local-signup/local-signup.js) code to see example usage.
+
+The following attributes are available in both forms:
 
 - `usernameField` {String} Allows you to customize one of the attributes sent to the server. It's set to `"email"` by default.
 - `usernamePlaceholder` {String} Set the placeholder text for the `usernameField`.  Default is `"e-mail address"`.
@@ -83,21 +66,105 @@ Many of the viewModel attributes are the same, so they share a [common base view
 - `Model` {can-connect Model} a can-connect compatible Model to use for submitting the form data.
 - `service` {FeathersJS service} a Feathers service to use for submitting the form data.
 - `suppressWarnings` {Boolean} There are a few warnings that will show up by default. Turn them off by setting `suppressWarnings` to true.  Default `false`.
-- `onUsernameChange(username)` {Function} A hook for performing actions when the username value changes.
-- `onPasswordChange(password)` {Function} A hook for performing actions when the password value changes.
-- `processData(data)` {Function} A hook that lets you optionally perform some processing on the data before it gets passed to `handleSubmit`.
-- `handleSubmit(data)` {Function} is called with the form data when the form is submitted.  If a `Model` or `service` was provided, it will be used to communicate with the server.  If not, `handleSubmit` must be overwritten with your own logic.  It must return a `Promise`.
+- `error` {String} When the server responds with an error string or an error object containing a `message` string, it will be set on `error` and shown in the UI above the form.
+- `buttonText` {String} Set the main action button's label.  Default is `"Login"` or `"Signup"`.
+
+- `clearError` {Function} Clears the error message.
+- `onSubmit(data)` {Function} is called with the form data when the form is submitted.  If a `Model` or `service` was provided, it will be used to communicate with the server.  If not, `handleSubmit` must be overwritten with your own logic.  It must return a `Promise`.
 - `onSuccess(responseData)` {Function} is called with the server response data.
 - `onError(error)` {Function} is called with the server response error.
 
+As of version `5.0`, both forms are based off of [@tannerlinsley/react-form](https://github.com/tannerlinsley/react-form). Check out the [React-Form API docs](https://github.com/tannerlinsley/react-form#-form-) to see additional properties and functions that are available.
+
 These are the custom attributes for the `<LoginForm>` form:
-- `buttonText` {String} Set the main action button's label.  Default is `"Login"`.
 - `onForgot` {Function} runs when the user clicks the "Forgot Password" link. There is no default handler for this, so you have to provide your own function.
 
 These are the custom attributes for the `<SignupForm>` form:
-- `buttonText` {String} Set the main action button's label.  Default is `"Sign up"`.
+- `asyncValidation` {Function} A function that returns a promise. If an error string is returned, or an error object with a `message` string is returned, it will become the validation error for the username/email field.
 
-There are two form demos included.  Start an http-server in the root and open [http://localhost:8080/src/forms/login-demo.html](http://localhost:8080/src/forms/login-demo.html) and [http://localhost:8080/src/forms/signup-demo.html](http://localhost:8080/src/forms/signup-demo.html).  Both demos include examples for using a `Model`, `service`, or custom function.
+See the "Running the Demos" section to run the included form demos.  Both demos include examples for using a `Model`, `service`, or custom function.
+
+## Form
+
+As of version `5.0`, and as part of the refactor to use [react-form](https://github.com/tannerlinsley/react-form), it's now possible to easily create your own form. The `Form` element is a wrapper for the react-form component by the same name.  Check out the [React-Form API docs](https://github.com/tannerlinsley/react-form#-form-) to see additional properties and functions that are available.  Below is an annotated example of how to make a custom form.
+
+```jsx
+import React from 'react';
+import Form from '../form/form.js';
+import { Text } from 'react-form';
+import '../forms.less';
+import FormError from '../form-error/form-error';
+import AsyncValidator from '../async-validator/async-validator';
+
+export default ({
+	asyncValidation,
+  forgotClicked,
+	// Allow all react-form props to pass through
+  ...rest
+}) => {
+  return (
+    <Form {...rest}>
+			{// You must wrap your custom form in two functions as done here.}
+      {({error, clearError}) => {
+        return ({values, submitForm}) => {
+          return (
+            <form onSubmit={submitForm} className='auth-component-form'>
+              <FormError error={error} clearError={clearError} />
+
+              <Text field='email' placeholder='email' tabIndex='1' />
+              <Text field='password' type='password' placeholder='password' tabIndex='1' />
+
+							{asyncValidation && <AsyncValidator field='emailError' params={queryParams} validate={asyncValidation} />}
+
+              <Text field='myCustomField' placeholder='Custom Snazzy Field' tabIndex='1' />
+
+              <div className='forgot-password'>
+                <a href='javascript://' onClick={forgotClicked} tabIndex='2'>forgot password</a>
+              </div>
+
+              <button type='submit' tabIndex='1'>Login</button>
+            </form>
+          );
+        };
+      }}
+    </Form>
+  );
+};
+```
+
+Any `react-form` fields you add will be added to the payload and sent to the server.
+
+## AsyncValidator
+The `AsyncValidator` allows you to run asynchronous validations against a server.  The `Form` example, above, shows how to use it in a form.  To make the validations work, you need to use the `validate` attribute on a form.  We assigned the AsyncValidator a `field` of `emailError`.  Now we can use the `emailError` attribute in the `validate` rules:
+
+```js
+<SignupForm 
+	Model={DummyModel}
+	defaultValues={{email: '', password: '', emailError: ''}}
+	validate={({email, password, emailError}) => {
+		return {
+			email: !email ? 'E-mail address is required' : emailError || null,
+			password: !password ? 'Password is required' : null
+		};
+	}}
+	onSuccess={handleSuccess}
+	usernameField='username'
+	usernamePlaceholder='username'
+	asyncValidation={simulatedAsyncValidation} />
+```
+
+## FormError
+
+The `FormError` component is simply a `div` with an error message in it.  It is used to show error messages returned from a server.  See how it's used in the `Form` example, above, or in the demos.
+
+```js
+import FormError from 'auth-component/forms/form-error/form-error';
+
+<FormError error={error} clearError={clearError} />
+```
+
+- `error` {String} The error message to display.
+- `clearError` {Function} a function that can be called to clear the error message.
 
 ## Buttons
 
@@ -210,11 +277,24 @@ ReactDOM.render(
 - `5.0.0` - Rebuilt forms using [tannerlinsley/react-form](https://github.com/tannerlinsley/react-form).
   - Forms can no be validated.
 	- It's now MUCH easier to customize forms.  You're no longer stuck using the basic login forms, which only include email and password.
+	- Added AsyncValidator component that works with React-Form.
+	- Added FormError component that shows server-sent form errors.
 - `4.0.0`
   - Created login buttons.
 	- Created basic login and signup forms.  No validation.
 
 ## Contributing
+
+### Running the demos
+You can try out the included demos using the following steps:
+
+1. Clone the repo.
+2. Run `yarn` or `npm install`
+3. Run `npm run develop`
+4. With the development server running, open a demo
+	- [Main demo](http://localhost:8080)
+	- [Local Login Form Demo](http://localhost:8080/src/forms/local-login/demo.html)
+	- [Local Signup Form Demo](http://localhost:8080/src/forms/local-signup/demo.html)
 
 ### Making a Build
 
@@ -227,7 +307,7 @@ node build
 
 ### Running the tests
 
-Tests can run in the browser by opening a webserver and visiting the `test.html` page.
+Tests can run in the browser by opening a webserver and visiting the `test/test.html` page.
 Automated tests that run the tests from the command line in Firefox can be run with
 
 ```
