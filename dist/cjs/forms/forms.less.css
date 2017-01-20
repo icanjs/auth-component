@@ -1,0 +1,43 @@
+/*auth-component@5.0.1#forms/forms.less!steal-less@1.0.1#less*/
+div.auth-ui-container form.auth-component-form {
+  margin-bottom: 3px;
+}
+form.auth-component-form {
+  text-align: center;
+  font-size: 16px;
+  margin-top: 22px;
+}
+form.auth-component-form div.forgot-password {
+  margin-top: 12px;
+  height: 15px;
+  font-size: 12px;
+}
+form.auth-component-form div.forgot-password a {
+  color: #77BFED;
+}
+form.auth-component-form button {
+  width: calc(90%);
+  height: 52px;
+  background: #77BFED;
+  border: none;
+  color: white;
+  margin-top: 22px;
+  font-size: 16px;
+}
+form.auth-component-form input {
+  border-bottom: solid 1px #E6E6E6;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  height: 30px;
+  width: calc(90%);
+  text-align: center;
+  padding: 6px 0 2px;
+  margin-bottom: 4px;
+  outline: none;
+  font-size: 14px;
+  box-sizing: content-box;
+}
+form.auth-component-form input:focus {
+  border-bottom: solid 1px #77BFED;
+}

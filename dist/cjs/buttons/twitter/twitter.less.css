@@ -1,0 +1,11 @@
+/*auth-component@5.0.1#buttons/twitter/twitter.less!steal-less@1.0.1#less*/
+.oauth-twitter {
+  background: #50ABF1;
+  /* This shouldn't know about its implementation.  Move this somewhere else. */
+}
+.oauth-twitter > * {
+  color: white;
+}
+.oauth-twitter.one {
+  width: 147px;
+}
