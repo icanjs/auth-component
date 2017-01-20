@@ -68,7 +68,6 @@ The following attributes are available in both forms:
 - `suppressWarnings` {Boolean} There are a few warnings that will show up by default. Turn them off by setting `suppressWarnings` to true.  Default `false`.
 - `error` {String} When the server responds with an error string or an error object containing a `message` string, it will be set on `error` and shown in the UI above the form.
 - `buttonText` {String} Set the main action button's label.  Default is `"Login"` or `"Signup"`.
-
 - `clearError` {Function} Clears the error message.
 - `onSubmit(data)` {Function} is called with the form data when the form is submitted.  If a `Model` or `service` was provided, it will be used to communicate with the server.  If not, `handleSubmit` must be overwritten with your own logic.  It must return a `Promise`.
 - `onSuccess(responseData)` {Function} is called with the server response data.
@@ -86,7 +85,19 @@ See the "Running the Demos" section to run the included form demos.  Both demos 
 
 ## Form
 
-As of version `5.0`, and as part of the refactor to use [react-form](https://github.com/tannerlinsley/react-form), you can easily create your own auth form. The `Form` element is a wrapper for the react-form component by the same name, but adds asynchronous validation support and automatic server response error handling.  Check out the [React-Form API docs](https://github.com/tannerlinsley/react-form#-form-) to see additional properties and functions that are available.  Below is an annotated example of how to make a custom form.
+As of version `5.0`, and as part of the refactor to use [react-form](https://github.com/tannerlinsley/react-form), you can easily create your own auth form. The `Form` element is a wrapper for the react-form component by the same name, but adds asynchronous validation support and automatic server response error handling.  The following properties are available on the `Form` component:
+
+- `strategy` {String} When using [feathers-authentication](https://github.com/feathersjs/feathers-authentication), setting this attribute will add a `strategy` attribute to the outgoing data.
+- `Model` {can-connect Model} a can-connect compatible Model to use for submitting the form data.
+- `service` {FeathersJS service} a Feathers service to use for submitting the form data.
+- `suppressWarnings` {Boolean} There are a few warnings that will show up by default. Turn them off by setting `suppressWarnings` to true.  Default `false`.
+- `error` {String} When the server responds with an error string or an error object containing a `message` string, it will be set on `error` and shown in the UI above the form.
+- `clearError` {Function} Clears the error message.
+- `onSubmit(data)` {Function} is called with the form data when the form is submitted.  If a `Model` or `service` was provided, it will be used to communicate with the server.  If not, `handleSubmit` must be overwritten with your own logic.  It must return a `Promise`.
+- `onSuccess(responseData)` {Function} is called with the server response data.
+- `onError(error)` {Function} is called with the server response error.
+
+Check out the [React-Form API docs](https://github.com/tannerlinsley/react-form#-form-) to see additional properties and functions that are available.  Below is an annotated example of how to make a custom form.
 
 ```jsx
 import React from 'react';
