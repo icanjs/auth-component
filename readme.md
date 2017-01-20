@@ -298,8 +298,8 @@ ReactDOM.render(
 
 ## Changelog
 - `5.0.0` - Rebuilt forms using [tannerlinsley/react-form](https://github.com/tannerlinsley/react-form).
-  - Forms can no be validated.
-  - It's now MUCH easier to customize forms.  You're no longer stuck using the basic login forms, which only include email and password.
+  - Forms can now be validated.
+  - It's now MUCH easier to customize forms.  You're no longer stuck using the basic login forms, which only include email and password fields.
   - Added AsyncValidator component that works with React-Form.
   - Added FormError component that shows server-sent form errors.
 - `4.0.0`
