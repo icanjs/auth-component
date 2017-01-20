@@ -14,8 +14,8 @@ import GitHubButton from './buttons/github/';
 import GoogleButton from './buttons/google/';
 import MicrosoftButton from './buttons/microsoft/';
 import TwitterButton from './buttons/twitter/';
-import SignupForm from 'auth-component/forms/signup/';
-import LoginForm from 'auth-component/forms/login/';
+import SignupForm from 'auth-component/forms/local-signup/local-signup';
+import LoginForm from 'auth-component/forms/local-login/local-login';
 
 const RouteMap = DefineMap.extend({
   page: {

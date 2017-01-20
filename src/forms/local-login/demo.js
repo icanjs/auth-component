@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import LoginForm from './login';
+import LoginForm from './local-login';
 import DefineMap from 'can-define/map/map';
 
 const dummyService = {
@@ -28,9 +28,21 @@ ReactDOM.render(
   <div>
     <div className='container standalone'>
       <h2>Login - React Standalone</h2>
-      <LoginForm handleLogin={authData => {
-        console.log(authData);
-      }} />
+      <p>Custom field names and validation</p>
+      <LoginForm
+        usernameField='username'
+        usernamePlaceholder='your username'
+        passwordField='secretPhrase'
+        passwordPlaceholder='secret phrase'
+        onSubmit={(authData) => {
+          return Promise.resolve(authData);
+        }}
+        validate={({username, secretPhrase}) => {
+          return {
+            username: !username ? 'E-mail address is required' : null,
+            secretPhrase: !secretPhrase ? 'Secret phrase is required' : null
+          };
+        }} />
     </div>
 
     <div className='container service'>
@@ -49,7 +61,13 @@ ReactDOM.render(
     <div className='container error'>
       <h2>Login - Error</h2>
       <LoginForm Model={DummyModel}
-        handleSubmit={() => Promise.reject('Invalid everything! No soup for you!')}
+        onSubmit={() => {
+          return new Promise((resolve, reject) => {
+            setTimeout(() => {
+              reject('Invalid everything! No soup for you!');
+            }, 200);
+          });
+        }}
         onSuccess={handleSuccess}
         onError={error => { console.error(error); }} />
     </div>

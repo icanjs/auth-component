@@ -18,9 +18,17 @@ form.auth-component-form {
 		}
 	}
 
-	input[type=email].auth-component-input,
-	input[type=text].auth-component-input,
-	input[type=password].auth-component-input {
+	button {
+		width: calc(100% - 10px);
+		height: 52px;
+		background: #77BFED;
+		border: none;
+		color: white;
+		margin-top: 22px;
+		font-size: 16px;
+	}
+
+	input {
 		border-bottom: solid 1px #E6E6E6;
 		border-top: none;
 		border-left: none;
@@ -37,15 +45,5 @@ form.auth-component-form {
 		&:focus {
 			border-bottom: solid 1px #77BFED;
 		}
-	}
-
-	button {
-		width: calc(100% - 10px);
-		height: 52px;
-		background: #77BFED;
-		border: none;
-		color: white;
-		margin-top: 22px;
-		font-size: 16px;
 	}
 }
