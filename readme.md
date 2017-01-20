@@ -151,6 +151,18 @@ The `AsyncValidator` allows you to run asynchronous validations against a server
 	usernameField='username'
 	usernamePlaceholder='username'
 	asyncValidation={simulatedAsyncValidation} />
+
+function simulatedAsyncValidation (query) {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      if (query.email === 'contact@bitovi.com') {
+        reject('That email is unavailable');
+      } else {
+        resolve(true);
+      }
+    }, 500);
+  });
+}
 ```
 
 ## FormError
