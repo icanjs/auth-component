@@ -86,7 +86,7 @@ See the "Running the Demos" section to run the included form demos.  Both demos 
 
 ## Form
 
-As of version `5.0`, and as part of the refactor to use [react-form](https://github.com/tannerlinsley/react-form), it's now possible to easily create your own form. The `Form` element is a wrapper for the react-form component by the same name.  Check out the [React-Form API docs](https://github.com/tannerlinsley/react-form#-form-) to see additional properties and functions that are available.  Below is an annotated example of how to make a custom form.
+As of version `5.0`, and as part of the refactor to use [react-form](https://github.com/tannerlinsley/react-form), you can easily create your own auth form. The `Form` element is a wrapper for the react-form component by the same name, but adds asynchronous validation support and automatic server response error handling.  Check out the [React-Form API docs](https://github.com/tannerlinsley/react-form#-form-) to see additional properties and functions that are available.  Below is an annotated example of how to make a custom form.
 
 ```jsx
 import React from 'react';
