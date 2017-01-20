@@ -1,5 +1,11 @@
 import AuthContainer from './auth-container/auth-container';
 
+import Form from './forms/form/form';
+import FormError from './forms/form-error/form-error';
+import AsyncValidator from './forms/async-validator/async-validator';
+import LocalLoginForm from './forms/local-login/local-login';
+import LocalSignupForm from './forms/local-signup/local-signup';
+
 import Generic from './buttons/button';
 import Amazon from './buttons/amazon/amazon';
 import Dropbox from './buttons/dropbox/dropbox';
@@ -17,11 +23,13 @@ import StackOverflow from './buttons/stackoverflow/stackoverflow';
 import Twitter from './buttons/twitter/twitter';
 import Yahoo from './buttons/yahoo/yahoo';
 
-import LoginForm from './forms/login/login';
-import SignupForm from './forms/signup/signup';
-
 export {
   AuthContainer,
+  Form,
+  FormError,
+  AsyncValidator,
+  LocalLoginForm,
+  LocalSignupForm,
   Generic as GenericButton,
   Amazon as AmazonButton,
   Dropbox as DropboxButton,
@@ -37,13 +45,16 @@ export {
   Slack as SlackButton,
   StackOverflow as StackOverflowButton,
   Twitter as TwitterButton,
-  Yahoo as YahooButton,
-  LoginForm,
-  SignupForm
+  Yahoo as YahooButton
 };
 
 export default {
   AuthContainer,
+  Form,
+  FormError,
+  AsyncValidator,
+  LocalLoginForm,
+  LocalSignupForm,
   buttons: {
     Generic,
     Amazon,
@@ -61,7 +72,5 @@ export default {
     StackOverflow,
     Twitter,
     Yahoo
-  },
-  LoginForm,
-  SignupForm
+  }
 };
