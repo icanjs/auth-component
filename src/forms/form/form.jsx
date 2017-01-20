@@ -1,6 +1,5 @@
 import React from 'react';
 import { Form } from 'react-form';
-import FormError from '../form-error/form-error';
 
 export default ({
   children,
