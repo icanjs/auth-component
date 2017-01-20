@@ -1,0 +1,11 @@
+/*auth-component@5.0.4#buttons/facebook/facebook.less!steal-less@1.0.1#less*/
+.oauth-facebook {
+  background: #5E7AB5;
+  /* This shouldn't know about its implementation.  Move this somewhere else. */
+}
+.oauth-facebook > * {
+  color: white;
+}
+.oauth-facebook.one {
+  width: 159px;
+}

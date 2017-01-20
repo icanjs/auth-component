@@ -1,0 +1,11 @@
+/*auth-component@5.0.4#buttons/linkedin/linkedin.less!steal-less@1.0.1#less*/
+.oauth-linkedin {
+  background: #006087;
+  /* This shouldn't know about its implementation.  Move this somewhere else. */
+}
+.oauth-linkedin > * {
+  color: white;
+}
+.oauth-linkedin.one {
+  width: 148px;
+}

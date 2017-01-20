@@ -1,0 +1,11 @@
+/*auth-component@5.0.4#buttons/slack/slack.less!steal-less@1.0.1#less*/
+.oauth-slack {
+  background: #50AD83;
+  /* This shouldn't know about its implementation.  Move this somewhere else. */
+}
+.oauth-slack > * {
+  color: white;
+}
+.oauth-slack.one {
+  width: 135px;
+}

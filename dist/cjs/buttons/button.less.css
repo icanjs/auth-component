@@ -1,0 +1,43 @@
+/*auth-component@5.0.4#buttons/button.less!steal-less@1.0.1#less*/
+div.oauth-buttons {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+button.auth-button {
+  border: 0px solid #556D99;
+  border-radius: 2px;
+  padding: 0;
+  margin: 0.4em;
+  font-size: 12px;
+}
+button.auth-button a {
+  display: flex;
+  align-items: center;
+  padding: 0.5em 0;
+  text-decoration: none;
+}
+button.auth-button a span.SVGInline {
+  width: 28px;
+  height: 28px;
+  margin: 0 8px;
+  display: inline-block;
+}
+button.auth-button a span.SVGInline svg {
+  height: 100%;
+  width: 100%;
+}
+button.auth-button a img.logo {
+  height: 28px;
+  margin: 0 8px;
+}
+button.auth-button a:hover {
+  text-decoration: underline;
+}
+button.auth-button span.auth-button-text {
+  padding-left: 2px;
+  white-space: nowrap;
+  margin-right: 0.8em;
+}
