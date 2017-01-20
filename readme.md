@@ -33,7 +33,7 @@ There is also a matching CanJS Stache version: https://github.com/icanjs/can-aut
 </AuthContainer>
 ```
 
-## AuthContainer
+## Quick and Easy Horizontal and Vertical Centering
 
 The `<AuthContainer></AuthContainer>` component is a set a styles that center a white login container both vertically and horizontally inside its parent element.  It has no viewModel logic of its own, so all of the other components will work without it.
 
@@ -45,7 +45,7 @@ import AuthContainer from 'auth-component/auth-container/auth-container';
 </AuthContainer>
 ```
 
-## LocalSignupForm and LocalLoginForm
+## Local Auth Forms, Ready For Use
 
 A basic Local (username & password) Login and Signup form are included.
 
@@ -83,7 +83,7 @@ These are the custom attributes for the `<SignupForm>` form:
 
 See the "Running the Demos" section to run the included form demos.  Both demos include examples for using a `Model`, `service`, or custom function.
 
-## Form
+## Create Custom Forms
 
 As of version `5.0`, and as part of the refactor to use [react-form](https://github.com/tannerlinsley/react-form), you can easily create your own auth form. The `Form` element is a wrapper for the react-form component by the same name, but adds asynchronous validation support and automatic server response error handling.  The following properties are available on the `Form` component:
 
@@ -145,8 +145,8 @@ export default ({
 
 Any `react-form` fields you add will be added to the payload and sent to the server.
 
-## AsyncValidator
-The `AsyncValidator` allows you to run asynchronous validations against a server.  The `Form` example, above, shows how to use it in a form.  To make the validations work, you need to use the `validate` attribute on a form.  We assigned the AsyncValidator a `field` of `emailError`.  Now we can use the `emailError` attribute in the `validate` rules:
+## Asynchronous Field Validation
+The `AsyncValidator` component allows you to run asynchronous validations against a server.  The `Form` example, above, shows how to use it in a form.  To make the validations work, you need to use the `validate` attribute on a form.  We assigned the AsyncValidator a `field` of `emailError`.  Now we can use the `emailError` attribute in the `validate` rules:
 
 ```js
 <SignupForm 
@@ -176,9 +176,9 @@ function simulatedAsyncValidation (query) {
 }
 ```
 
-## FormError
+## Automatic Form Error Handling
 
-The `FormError` component is simply a `div` with an error message in it.  It is used to show error messages returned from a server.  See how it's used in the `Form` example, above, or in the demos.
+The `FormError` component is simply a `div` with an error message in it.  It is used to show error messages returned from a server.  See how it's used in the `Form` example, above, or in the demos.  When used with the `Form` component, errors shows when returned from the server.  They are automatically cleared when the form is submitted.
 
 ```js
 import FormError from 'auth-component/forms/form-error/form-error';
@@ -189,9 +189,9 @@ import FormError from 'auth-component/forms/form-error/form-error';
 - `error` {String} The error message to display.
 - `clearError` {Function} a function that can be called to clear the error message.
 
-## Buttons
+## Beautiful, Scalable Buttons
 
-A Generic button and a bunch of ready-to-use buttons are included.  There is a buttons demo included.  Start an http-server in the root, and check out [http://localhost:8080/src/buttons/buttons-demo.html](http://localhost:8080/src/buttons/buttons-demo.html).
+A Generic button and a bunch of hand-tailored, scalable buttons are included.
 
 ### Generic Auth Button
 
