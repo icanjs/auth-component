@@ -114,7 +114,7 @@ export default ({
               <Text field='email' placeholder='email' tabIndex='1' />
               <Text field='password' type='password' placeholder='password' tabIndex='1' />
 
-							{asyncValidation && <AsyncValidator field='emailError' params={queryParams} validate={asyncValidation} />}
+              {asyncValidation && <AsyncValidator field='emailError' params={queryParams} validate={asyncValidation} />}
 
               <Text field='myCustomField' placeholder='Custom Snazzy Field' tabIndex='1' />
 
