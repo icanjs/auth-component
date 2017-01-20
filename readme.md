@@ -206,6 +206,14 @@ ReactDOM.render(
 );
 ```
 
+## Changelog
+- `5.0.0` - Rebuilt forms using [tannerlinsley/react-form](https://github.com/tannerlinsley/react-form).
+  - Forms can no be validated.
+	- It's now MUCH easier to customize forms.  You're no longer stuck using the basic login forms, which only include email and password.
+- `4.0.0`
+  - Created login buttons.
+	- Created basic login and signup forms.  No validation.
+
 ## Contributing
 
 ### Making a Build

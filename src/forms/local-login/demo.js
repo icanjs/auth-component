@@ -23,26 +23,26 @@ function handleSuccess (loginData) {
   console.log('Login was successful!', loginData);
 }
 
-function simulatedAsyncValidation (query) {
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      if (query.email === 'marshall@creativeideal.net') {
-        reject('That email is unavailable');
-      } else {
-        resolve(true);
-      }
-    }, 500);
-  });
-}
-
 // Render the DOM
 ReactDOM.render(
   <div>
     <div className='container standalone'>
       <h2>Login - React Standalone</h2>
-      <LoginForm handleLogin={authData => {
-        console.log(authData);
-      }} />
+      <p>Custom field names and validation</p>
+      <LoginForm
+        usernameField='username'
+        usernamePlaceholder='your username'
+        passwordField='secretPhrase'
+        passwordPlaceholder='secret phrase'
+        onSubmit={(authData) => {
+          return Promise.resolve(authData);
+        }}
+        validate={({username, secretPhrase}) => {
+          return {
+            username: !username ? 'E-mail address is required' : null,
+            secretPhrase: !secretPhrase ? 'Secret phrase is required' : null
+          };
+        }} />
     </div>
 
     <div className='container service'>
@@ -55,14 +55,19 @@ ReactDOM.render(
       <LoginForm Model={DummyModel}
         onSuccess={handleSuccess}
         usernameField='username'
-        usernamePlaceholder='username'
-        usernameAsyncValidation={simulatedAsyncValidation} />
+        usernamePlaceholder='username' />
     </div>
 
     <div className='container error'>
       <h2>Login - Error</h2>
       <LoginForm Model={DummyModel}
-        onSubmit={() => Promise.reject('Invalid everything! No soup for you!')}
+        onSubmit={() => {
+          return new Promise((resolve, reject) => {
+            setTimeout(() => {
+              reject('Invalid everything! No soup for you!');
+            }, 200);
+          });
+        }}
         onSuccess={handleSuccess}
         onError={error => { console.error(error); }} />
     </div>

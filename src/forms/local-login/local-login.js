@@ -1,21 +1,37 @@
 import React from 'react';
 import { Text } from 'react-form';
-import AuthForm from '../form.js';
+import AuthForm from '../form/form.js';
+import '../forms.less';
+import FormError from '../form-error/form-error';
 
-export default ({asyncValidation, forgotClicked, buttonText}) => {
+export default ({
+  forgotClicked,
+  usernameField = 'email',
+  usernamePlaceholder = 'e-mail address',
+  passwordField = 'password',
+  passwordPlaceholder = 'password',
+  buttonText,
+  ...rest
+}) => {
   return (
-    <AuthForm>
-      {({values, submitForm}) => {
-        return (<form onSubmit={submitForm} className='auth-component-form'>
-          <Text field='email' placeholder='e-mail address' tabIndex='1' />
-          <Text field='password' type='password' placeholder='password' tabIndex='1' />
+    <AuthForm {...rest}>
+      {({error, clearError}) => {
+        return ({values, submitForm}) => {
+          return (
+            <form onSubmit={submitForm} className='auth-component-form'>
+              <FormError error={error} clearError={clearError} />
 
-          <div className='forgot-password'>
-            <a href='javascript://' onClick={forgotClicked} tabIndex='2'>forgot password</a>
-          </div>
+              <Text field={usernameField} placeholder={usernamePlaceholder} tabIndex='1' />
+              <Text field={passwordField} type='password' placeholder={passwordPlaceholder} tabIndex='1' />
 
-          <button type='submit' tabIndex='1'>{buttonText || 'Login'}</button>
-        </form>);
+              <div className='forgot-password'>
+                <a href='javascript://' onClick={forgotClicked} tabIndex='2'>forgot password</a>
+              </div>
+
+              <button type='submit' tabIndex='1'>{buttonText || 'Login'}</button>
+            </form>
+          );
+        };
       }}
     </AuthForm>
   );
