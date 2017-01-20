@@ -1,0 +1,48 @@
+/*auth-component@5.0.3#auth-container/auth-container.less!steal-less@1.0.1#less*/
+div.auth-component {
+  display: block;
+  color: #4A4A4A;
+  width: 100%;
+}
+@media only screen and (min-width: 375px) {
+  div.auth-component {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+div.auth-component a {
+  text-decoration: none;
+}
+div.auth-component div.auth-ui-container {
+  padding-bottom: 11px;
+  background: white;
+}
+@media only screen and (min-width: 375px) {
+  div.auth-component div.auth-ui-container {
+    -webkit-box-shadow: 0px 0px 24px 0px rgba(110, 110, 110, 0.75);
+    -moz-box-shadow: 0px 0px 24px 0px rgba(110, 110, 110, 0.75);
+    box-shadow: 0px 0px 24px 0px rgba(110, 110, 110, 0.75);
+    width: 290px;
+  }
+}
+.auth-branding {
+  padding: 30px 0;
+  text-align: center;
+}
+.auth-error {
+  text-align: center;
+  background: #FFDCDC;
+  border: 1px solid #FF0000;
+  font-weight: 500;
+  margin: 0 15px;
+  padding: 4px;
+  font-size: 14px;
+  color: #FF0A0A;
+}
+/* MEDIUM MOBILE DEVICES ~375px+ */
+/* LARGE MOBILE DEVICES ~425px+ */
+/* TABLET & SMALLER LAPTOPS ~768px+ */
+/* DESKTOP ~1030px+ */
+/* LARGE VIEWING SIZE ~1240px+ */

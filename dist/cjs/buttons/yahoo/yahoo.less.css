@@ -1,0 +1,11 @@
+/*auth-component@5.0.3#buttons/yahoo/yahoo.less!steal-less@1.0.1#less*/
+.oauth-yahoo {
+  background: #7B0099;
+  /* This shouldn't know about its implementation.  Move this somewhere else. */
+}
+.oauth-yahoo > * {
+  color: white;
+}
+.oauth-yahoo.one {
+  width: 142px;
+}
