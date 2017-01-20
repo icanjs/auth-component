@@ -14,22 +14,22 @@ There is also a matching CanJS Stache version: https://github.com/icanjs/can-aut
 
 ```jsx
 <AuthContainer>
-	<Tabs activeTab={route.data.page} routeAttr='page' />
+  <Tabs activeTab={route.data.page} routeAttr='page' />
 
-	<div className='auth-branding'>
-		<SVGInline svg={logo} />
-	</div>
+  <div className='auth-branding'>
+    <SVGInline svg={logo} />
+  </div>
 
-	<div className='oauth-buttons'>
-		<FacebookButton popup='true' />
-		<GitHubButton popup='true' />
-		<GoogleButton popup='true' />
-		<MicrosoftButton popup='true' />
-		<TwitterButton popup='true' />
-	</div>
+  <div className='oauth-buttons'>
+    <FacebookButton popup='true' />
+    <GitHubButton popup='true' />
+    <GoogleButton popup='true' />
+    <MicrosoftButton popup='true' />
+    <TwitterButton popup='true' />
+  </div>
 
-	<Route data={{page: 'login'}} component={LoginForm} />
-	<Route data={{page: 'signup'}} component={SignupForm} />
+  <Route data={{page: 'login'}} component={LoginForm} />
+  <Route data={{page: 'signup'}} component={SignupForm} />
 </AuthContainer>
 ```
 
@@ -41,7 +41,7 @@ The `<AuthContainer></AuthContainer>` component is a set a styles that center a 
 import AuthContainer from 'auth-component/auth-container/auth-container';
 // In your template.
 <AuthContainer>
-	Put whatever markup you want inside here.
+  Put whatever markup you want inside here.
 </AuthContainer>
 ```
 
@@ -108,14 +108,14 @@ import FormError from '../form-error/form-error';
 import AsyncValidator from '../async-validator/async-validator';
 
 export default ({
-	asyncValidation,
+  asyncValidation,
   forgotClicked,
-	// Allow all react-form props to pass through
+  // Allow all react-form props to pass through
   ...rest
 }) => {
   return (
     <Form {...rest}>
-			{// You must wrap your custom form in two functions as done here.}
+      {// You must wrap your custom form in two functions as done here.}
       {({error, clearError}) => {
         return ({values, submitForm}) => {
           return (
@@ -150,18 +150,18 @@ The `AsyncValidator` allows you to run asynchronous validations against a server
 
 ```js
 <SignupForm 
-	Model={DummyModel}
-	defaultValues={{email: '', password: '', emailError: ''}}
-	validate={({email, password, emailError}) => {
-		return {
-			email: !email ? 'E-mail address is required' : emailError || null,
-			password: !password ? 'Password is required' : null
-		};
-	}}
-	onSuccess={handleSuccess}
-	usernameField='username'
-	usernamePlaceholder='username'
-	asyncValidation={simulatedAsyncValidation} />
+  Model={DummyModel}
+  defaultValues={{email: '', password: '', emailError: ''}}
+  validate={({email, password, emailError}) => {
+    return {
+      email: !email ? 'E-mail address is required' : emailError || null,
+      password: !password ? 'Password is required' : null
+    };
+  }}
+  onSuccess={handleSuccess}
+  usernameField='username'
+  usernamePlaceholder='username'
+  asyncValidation={simulatedAsyncValidation} />
 
 function simulatedAsyncValidation (query) {
   return new Promise((resolve, reject) => {
@@ -299,12 +299,12 @@ ReactDOM.render(
 ## Changelog
 - `5.0.0` - Rebuilt forms using [tannerlinsley/react-form](https://github.com/tannerlinsley/react-form).
   - Forms can no be validated.
-	- It's now MUCH easier to customize forms.  You're no longer stuck using the basic login forms, which only include email and password.
-	- Added AsyncValidator component that works with React-Form.
-	- Added FormError component that shows server-sent form errors.
+  - It's now MUCH easier to customize forms.  You're no longer stuck using the basic login forms, which only include email and password.
+  - Added AsyncValidator component that works with React-Form.
+  - Added FormError component that shows server-sent form errors.
 - `4.0.0`
   - Created login buttons.
-	- Created basic login and signup forms.  No validation.
+  - Created basic login and signup forms.  No validation.
 
 ## Contributing
 
@@ -315,9 +315,9 @@ You can try out the included demos using the following steps:
 2. Run `yarn` or `npm install`
 3. Run `npm run develop`
 4. With the development server running, open a demo
-	- [Main demo](http://localhost:8080)
-	- [Local Login Form Demo](http://localhost:8080/src/forms/local-login/demo.html)
-	- [Local Signup Form Demo](http://localhost:8080/src/forms/local-signup/demo.html)
+  - [Main demo](http://localhost:8080)
+  - [Local Login Form Demo](http://localhost:8080/src/forms/local-login/demo.html)
+  - [Local Signup Form Demo](http://localhost:8080/src/forms/local-signup/demo.html)
 
 ### Making a Build
 
