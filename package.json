@@ -60,6 +60,7 @@
   "dependencies": {
     "can-define": "^1.0.8",
     "feathers-authentication-popups": "^0.1.2",
+    "lodash.debounce": "^4.0.8",
     "lodash.isequal": "^4.5.0",
     "react": "^15.4.1",
     "react-dom": "^15.4.1",
@@ -72,7 +73,6 @@
     "can-route": "^3.0.6",
     "can-route-react": "^0.1.2",
     "done-serve": "^0.2.0",
-    "lodash.debounce": "^4.0.8",
     "semistandard": "^9.1.0",
     "steal": "^1.0.4",
     "steal-css": "^1.0.0",
