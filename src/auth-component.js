@@ -23,6 +23,8 @@ import StackOverflow from './buttons/stackoverflow/stackoverflow';
 import Twitter from './buttons/twitter/twitter';
 import Yahoo from './buttons/yahoo/yahoo';
 
+import CanRouteTabs from './tabs/can-route';
+
 export {
   AuthContainer,
   Form,
@@ -45,7 +47,8 @@ export {
   Slack as SlackButton,
   StackOverflow as StackOverflowButton,
   Twitter as TwitterButton,
-  Yahoo as YahooButton
+  Yahoo as YahooButton,
+  CanRouteTabs
 };
 
 export default {
@@ -72,5 +75,6 @@ export default {
     StackOverflow,
     Twitter,
     Yahoo
-  }
+  },
+  CanRouteTabs
 };
