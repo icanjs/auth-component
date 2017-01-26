@@ -25,7 +25,7 @@
     "document": "documentjs",
     "develop": "done-serve --static --develop --port 8080"
   },
-  "main": "src/auth-component",
+  "main": "dist/cjs/auth-component",
   "keywords": [
     "canjs",
     "react",
