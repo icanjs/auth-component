@@ -1,5 +1,5 @@
 import { connect } from 'react-view-models';
-import DefineMap from 'can-define/map/';
+import DefineMap from 'can-define/map/map';
 import View from './tabs.jsx';
 import route from 'can-route';
 import './tabs.less';

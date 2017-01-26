@@ -1,6 +1,6 @@
 import { connect } from 'react-view-models';
-import DefineMap from 'can-define/map/';
-import {devWarning} from 'auth-component/utils';
+import DefineMap from 'can-define/map/map';
+import {devWarning} from '../../utils';
 import View from './form.jsx';
 
 export const ViewModel = DefineMap.extend({
