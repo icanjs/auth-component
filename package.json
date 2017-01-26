@@ -1,6 +1,6 @@
 {
   "name": "auth-component",
-  "version": "5.0.8",
+  "version": "5.0.7",
   "description": "Clean authentication components for React",
   "homepage": "https://github.com/icanjs/auth-component",
   "repository": {
@@ -13,8 +13,8 @@
     "url": "https://github.com/marshallswain"
   },
   "scripts": {
-    "preversion": "npm test && npm run build",
-    "version": "git commit -am \"Update dist for release\" && git checkout -b release && git add -f dist/",
+    "preversion": "npm test && git checkout -b release && npm run build",
+    "version": "git commit -am \"Update dist for release\" && git add -f dist/",
     "postversion": "git push --tags && git checkout master && git branch -D release && git push",
     "testee": "testee test/test.html --browsers firefox",
     "test": "npm run lint && npm run testee",
