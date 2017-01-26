@@ -1,0 +1,11 @@
+/*auth-component@5.0.7#buttons/stackoverflow/stackoverflow.less!steal-less@1.0.1#less*/
+.oauth-stackoverflow {
+  background: #E5712A;
+  /* This shouldn't know about its implementation.  Move this somewhere else. */
+}
+.oauth-stackoverflow > * {
+  color: black;
+}
+.oauth-stackoverflow.one {
+  width: 179px;
+}
