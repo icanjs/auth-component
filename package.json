@@ -13,9 +13,8 @@
     "url": "https://github.com/marshallswain"
   },
   "scripts": {
-    "preversion": "npm test && npm run build",
-    "version": "git commit -am \"Update dist for release\" && git checkout -b release && git add -f dist/",
-    "postpublish": "git push --tags && git checkout master && git branch -D release && git push",
+    "prepublish": "npm run build",
+    "publish": "git push origin --tags && git push origin",
     "testee": "testee test/test.html --browsers firefox",
     "test": "npm run lint && npm run testee",
     "lint": "semistandard --fix",
