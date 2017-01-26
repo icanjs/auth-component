@@ -1,0 +1,11 @@
+/*auth-component@5.0.8#buttons/skype/skype.less!steal-less@1.0.1#less*/
+.oauth-skype {
+  background: #1AAEF0;
+  /* This shouldn't know about its implementation.  Move this somewhere else. */
+}
+.oauth-skype > * {
+  color: white;
+}
+.oauth-skype.one {
+  width: 140px;
+}

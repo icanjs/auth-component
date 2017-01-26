@@ -1,0 +1,14 @@
+/*auth-component@5.0.8#buttons/amazon/amazon.less!steal-less@1.0.1#less*/
+.oauth-amazon {
+  background: #FFAD1D;
+  /* This shouldn't know about its implementation.  Move this somewhere else. */
+}
+.oauth-amazon > * {
+  color: black;
+}
+.oauth-amazon.one {
+  width: 154px;
+}
+.oauth-amazon span {
+  font-weight: 400;
+}
