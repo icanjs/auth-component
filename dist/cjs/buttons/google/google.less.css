@@ -1,0 +1,11 @@
+/*auth-component@5.0.9#buttons/google/google.less!steal-less@1.0.1#less*/
+.oauth-google {
+  background: #DD4B39;
+  /* This shouldn't know about its implementation.  Move this somewhere else. */
+}
+.oauth-google > * {
+  color: white;
+}
+.oauth-google.one {
+  width: 145px;
+}
