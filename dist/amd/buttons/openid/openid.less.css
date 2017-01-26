@@ -1,0 +1,11 @@
+/*auth-component@5.0.6#buttons/openid/openid.less!steal-less@1.0.1#less*/
+.oauth-openid {
+  background: #F27F1C;
+  /* This shouldn't know about its implementation.  Move this somewhere else. */
+}
+.oauth-openid > * {
+  color: black;
+}
+.oauth-openid.one {
+  width: 148px;
+}
