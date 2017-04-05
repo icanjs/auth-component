@@ -4,7 +4,8 @@
 
 Compose a clean Auth UI with these simple React components.
 
-There is also a matching CanJS Stache version: https://github.com/icanjs/can-auth-component
+The CanJS Stache version: https://github.com/icanjs/can-auth-component<br/>
+The Vue.js version: https://github.com/icanjs/vue-auth-component
 
 ![auth-component example](https://cloud.githubusercontent.com/assets/128857/21478355/da76f80a-cb07-11e6-8a6d-dc382d30bf9f.jpg)
 
